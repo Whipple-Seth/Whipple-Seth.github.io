@@ -1,2 +1,3 @@
-# Hist390-Seth-Whipple
+# Whipple_Seth.github.io
+
  

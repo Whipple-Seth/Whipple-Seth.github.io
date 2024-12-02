@@ -3,248 +3,1077 @@
 <head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1" name="viewport">
-<title>Mini-Assignment #2</title>
+<title>HIST 390 - Final Project - Group 7</title>
 <style title="Twine CSS">@keyframes appear{0%{opacity:0}to{opacity:1}}@keyframes fade-in-out{0%,to{opacity:0}50%{opacity:1}}@keyframes rumble{25%{top:-0.1em}75%{top:.1em}0%,to{top:0px}}@keyframes shudder{25%{left:.1em}75%{left:-0.1em}0%,to{left:0px}}@keyframes buoy{25%{top:.25em}75%{top:-0.25em}0%,to{top:0px}}@keyframes sway{25%{left:.25em}75%{left:-0.25em}0%,to{left:0px}}@keyframes pulse{0%{transform:scale(0, 0)}20%{transform:scale(1.2, 1.2)}40%{transform:scale(0.9, 0.9)}60%{transform:scale(1.05, 1.05)}80%{transform:scale(0.925, 0.925)}to{transform:scale(1, 1)}}@keyframes zoom-in{0%{transform:scale(0, 0)}to{transform:scale(1, 1)}}@keyframes shudder-in{0%,to{transform:translateX(0em)}5%,25%,45%{transform:translateX(-1em)}15%,35%,55%{transform:translateX(1em)}65%{transform:translateX(-0.6em)}75%{transform:translateX(0.6em)}85%{transform:translateX(-0.2em)}95%{transform:translateX(0.2em)}}@keyframes rumble-in{0%,to{transform:translateY(0em)}5%,25%,45%{transform:translateY(-1em)}15%,35%,55%{transform:translateY(1em)}65%{transform:translateY(-0.6em)}75%{transform:translateY(0.6em)}85%{transform:translateY(-0.2em)}95%{transform:translateY(0.2em)}}@keyframes fidget{0%,8.1%,82.1%,31.1%,38.1%,44.1%,40.1%,47.1%,74.1%,16.1%,27.1%,72.1%,24.1%,95.1%,6.1%,36.1%,20.1%,4.1%,91.1%,14.1%,87.1%,to{left:0px;top:0px}8%,82%,31%,38%,44%{left:-1px}40%,47%,74%,16%,27%{left:1px}72%,24%,95%,6%,36%{top:-1px}20%,4%,91%,14%,87%{top:1px}}@keyframes slide-right{0%{transform:translateX(-100vw)}}@keyframes slide-left{0%{transform:translateX(100vw)}}@keyframes slide-up{0%{transform:translateY(100vh)}}@keyframes slide-down{0%{transform:translateY(-100vh)}}@keyframes fade-right{0%{opacity:0;transform:translateX(-1em)}to{opacity:1}}@keyframes fade-left{0%{opacity:0;transform:translateX(1em)}to{opacity:1}}@keyframes fade-up{0%{opacity:0;transform:translateY(1em)}to{opacity:1}}@keyframes fade-down{0%{opacity:0;transform:translateY(-1em)}to{opacity:1}}@keyframes flicker{0%,29%,31%,63%,65%,77%,79%,86%,88%,91%,93%{opacity:0}30%{opacity:.2}64%{opacity:.4}78%{opacity:.6}87%{opacity:.8}92%,to{opacity:1}}@keyframes blur{0%{filter:blur(2rem);opacity:0}25%{opacity:1}to{filter:blur(0rem);opacity:1}}.dom-debug-mode tw-story,.dom-debug-mode tw-passage,.dom-debug-mode tw-sidebar,.dom-debug-mode tw-include,.dom-debug-mode tw-hook,.dom-debug-mode tw-expression,.dom-debug-mode tw-link,.dom-debug-mode tw-dialog,.dom-debug-mode tw-columns,.dom-debug-mode tw-column,.dom-debug-mode tw-align{outline:1px solid #f5a3da;min-height:32px;display:block !important}.dom-debug-mode tw-story::before,.dom-debug-mode tw-passage::before,.dom-debug-mode tw-sidebar::before,.dom-debug-mode tw-include::before,.dom-debug-mode tw-hook::before,.dom-debug-mode tw-expression::before,.dom-debug-mode tw-link::before,.dom-debug-mode tw-dialog::before,.dom-debug-mode tw-columns::before,.dom-debug-mode tw-column::before,.dom-debug-mode tw-align::before{position:absolute;top:0;left:0;height:16px;background-color:#f5a3da;color:#000;font-size:16px;font-weight:normal;font-style:normal;font-family:monospace;display:inline-block;line-height:100%;white-space:pre;z-index:999997}.dom-debug-mode tw-story:hover,.dom-debug-mode tw-passage:hover,.dom-debug-mode tw-sidebar:hover,.dom-debug-mode tw-include:hover,.dom-debug-mode tw-hook:hover,.dom-debug-mode tw-expression:hover,.dom-debug-mode tw-link:hover,.dom-debug-mode tw-dialog:hover,.dom-debug-mode tw-columns:hover,.dom-debug-mode tw-column:hover,.dom-debug-mode tw-align:hover{outline:1px solid #fc9}.dom-debug-mode tw-story:hover::before,.dom-debug-mode tw-passage:hover::before,.dom-debug-mode tw-sidebar:hover::before,.dom-debug-mode tw-include:hover::before,.dom-debug-mode tw-hook:hover::before,.dom-debug-mode tw-expression:hover::before,.dom-debug-mode tw-link:hover::before,.dom-debug-mode tw-dialog:hover::before,.dom-debug-mode tw-columns:hover::before,.dom-debug-mode tw-column:hover::before,.dom-debug-mode tw-align:hover::before{background-color:#fc9;transition:background-color 1s}.dom-debug-mode tw-passage,.dom-debug-mode tw-include,.dom-debug-mode tw-hook,.dom-debug-mode tw-expression,.dom-debug-mode tw-link,.dom-debug-mode tw-dialog,.dom-debug-mode tw-columns,.dom-debug-mode tw-column,.dom-debug-mode tw-align{padding:1em;margin:0}.dom-debug-mode tw-story::before{content:'<tw-story tags="' attr(tags) '">'}.dom-debug-mode tw-passage::before{top:-16px;content:'<tw-passage tags="' attr(tags) '">'}.dom-debug-mode tw-sidebar::before{top:-16px;content:"<tw-sidebar>"}.dom-debug-mode tw-hook::before{content:'<tw-hook name="' attr(name) '">'}.dom-debug-mode tw-expression::before{content:'<tw-expression name="' attr(name) '">'}.dom-debug-mode tw-link::before{content:'<tw-link name="' attr(name) '">'}.dom-debug-mode tw-dialog::before{content:"<tw-dialog>"}.dom-debug-mode tw-columns::before{content:"<tw-columns>"}.dom-debug-mode tw-column::before{content:"<tw-column>"}.dom-debug-mode tw-align::before{content:"<tw-align>"}.dom-debug-mode tw-include::before{content:'<tw-include type="' attr(type) '" name="' attr(name) '">'}tw-open-button[goto]{display:none}.debug-mode tw-open-button[replay],.debug-mode tw-open-button[goto]{display:inline}.debug-mode tw-expression{display:inline-block !important}.debug-mode tw-expression[type=variable]::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"$" attr(name)}.debug-mode tw-expression[type=tempVariable]::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"_" attr(name)}.debug-mode tw-expression[return=boolean]{background-color:rgba(179,179,179,.2)}.debug-mode tw-expression[return=array]{background-color:rgba(255,102,102,.2)}.debug-mode tw-expression[return=dataset]{background-color:rgba(255,128,0,.2)}.debug-mode tw-expression[return=number]{background-color:rgba(255,179,102,.2)}.debug-mode tw-expression[return=datamap]{background-color:rgba(255,255,102,.2)}.debug-mode tw-expression[return=changer]{background-color:rgba(179,255,102,.2)}.debug-mode tw-expression[return=lambda]{background-color:rgba(102,255,102,.2)}.debug-mode tw-expression[return=hookname]{background-color:rgba(102,255,204,.2)}.debug-mode tw-expression[return=string]{background-color:rgba(102,255,255,.2)}.debug-mode tw-expression[return=datatype]{background-color:rgba(102,153,255,.2)}.debug-mode tw-expression[return=gradient],.debug-mode tw-expression[return=colour]{background-color:rgba(204,102,255,.2)}.debug-mode tw-expression[return=instant],.debug-mode tw-expression[return=macro]{background-color:rgba(240,117,199,.2)}.debug-mode tw-expression[return=command]{background-color:rgba(153,153,255,.2)}.debug-mode tw-expression.false{background-color:rgba(255,0,0,.2) !important}.debug-mode tw-expression[type=macro]::before{content:"(" attr(name) ":)";padding:0 .5rem;font-size:1rem;vertical-align:middle;line-height:normal;background-color:inherit;border:1px solid rgba(255,255,255,.5)}.debug-mode tw-expression[title]:not([title=""]){cursor:help}.debug-mode tw-hook{background-color:rgba(0,85,255,.1) !important}.debug-mode tw-hook::before{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"["}.debug-mode tw-hook::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"]"}.debug-mode tw-hook[name]::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"]<" attr(name) "|"}.debug-mode tw-pseudo-hook{background-color:rgba(255,170,0,.1) !important}.debug-mode tw-collapsed::before{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"{"}.debug-mode tw-collapsed::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"}"}.debug-mode tw-verbatim::before,.debug-mode tw-verbatim::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"`"}.debug-mode tw-align[style*="text-align: center"]{background:linear-gradient(to right, hsla(14, 100%, 87%, 0) 0%, hsla(14, 100%, 87%, 0.25) 50%, hsla(14, 100%, 87%, 0) 100%)}.debug-mode tw-align[style*="text-align: left"]{background:linear-gradient(to right, hsla(14, 100%, 87%, 0.25) 0%, hsla(14, 100%, 87%, 0) 100%)}.debug-mode tw-align[style*="text-align: right"]{background:linear-gradient(to right, hsla(14, 100%, 87%, 0) 0%, hsla(14, 100%, 87%, 0.25) 100%)}.debug-mode tw-column{background-color:rgba(189,228,255,.2)}.debug-mode tw-enchantment{animation:enchantment .5s infinite;border:1px solid}.debug-mode tw-link::after,.debug-mode tw-broken-link::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:attr(passage-name)}.debug-mode tw-include{background-color:rgba(204,128,51,.1)}.debug-mode tw-include::before{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:attr(type) ' "' attr(name) '"'}.debug-dialogs tw-backdrop:not(.eval-replay):not(.harlowe-crash){pointer-events:none;opacity:.1}tw-eval-replay tw-eval-code,tw-eval-replay tw-eval-explanation{max-height:20vh;overflow:auto;margin:10px auto}tw-eval-replay tw-eval-code{display:block;font-family:monospace;padding-bottom:1ex;border-bottom:2px solid gray}tw-eval-replay tw-eval-explanation{display:block;text-align:center}tw-eval-replay tw-eval-explanation>code{white-space:pre-wrap}tw-eval-replay tw-eval-explanation>code.from-block{width:40%;display:inline-block;text-align:left;max-height:4em;overflow-wrap:anywhere;overflow-y:scroll}tw-eval-replay tw-eval-explanation>code.from-block~.to-desc{width:calc(40% - 2em);margin-left:2em;display:inline-block}tw-eval-replay tw-eval-explanation>code.from-block+span::after{content:"..."}tw-eval-replay tw-eval-explanation>code.from-inline{text-align:right}tw-eval-replay tw-eval-explanation>:nth-child(2){white-space:pre}tw-eval-replay tw-eval-explanation>.to-desc{text-align:left}tw-eval-replay tw-eval-explanation>table{width:100%;margin-top:1em}tw-eval-replay tw-eval-explanation>table td{white-space:pre-wrap !important;word-wrap:anywhere}tw-eval-replay tw-eval-reason{text-align:center;font-size:80%;font-style:italic;display:block}tw-eval-replay tw-eval-it{text-align:center;font-size:80%;display:block}tw-eval-replay tw-dialog-links{display:-ms-flexbox;display:flex;-ms-flex-pack:distribute;justify-content:space-around}@keyframes enchantment{0%,to{border-color:#ffb366}50%{border-color:#6fc}}tw-debugger{position:fixed;box-sizing:border-box;bottom:0;right:0;z-index:999999;min-width:14em;min-height:1em;padding:0em .5em .5em 1em;font-size:1.25em;font-family:sans-serif;color:#262626;background-color:#fff;border-left:solid #262626 2px;border-top:solid #262626 2px;border-top-left-radius:.5em;opacity:1}tw-debugger.fade-panel:not(:hover){opacity:.33}tw-debugger.theme-dark{color:#d9d9d9;background-color:#000}tw-debugger.theme-dark{border-color:#d9d9d9 rgba(0,0,0,0) rgba(0,0,0,0) #d9d9d9}tw-debugger select{margin-right:1em;width:12em}tw-debugger button,tw-debugger tw-link{border-radius:3px;border:solid #999 1px;margin:auto 4px;color:#262626;background-color:#fff;cursor:pointer}tw-debugger button.enabled,tw-debugger tw-link.enabled{color:#000;background-color:#d9d9d9;box-shadow:inset #999 3px 5px .5em}tw-debugger.theme-dark button,tw-debugger.theme-dark tw-link{color:#d9d9d9;background-color:#000;border-color:#666}tw-debugger.theme-dark button.enabled,tw-debugger.theme-dark tw-link.enabled{color:#e6e6e6;background-color:#424242;box-shadow:inset #666 3px 5px .5em}tw-debugger button{font-size:1em;overflow-x:hidden;text-overflow:ellipsis;white-space:pre}tw-debugger tw-link{font-size:1.25em;border-radius:16px;border-style:solid;border-width:2px;text-align:center;padding:0px 8px;display:block}tw-debugger tw-link:hover{border-color:#262626;color:#262626}tw-debugger.theme-dark tw-link:hover{border-color:#d9d9d9;color:#d9d9d9}tw-debugger tw-dialog{background-color:#fff;color:#000;font-size:1.25em}tw-debugger.theme-dark tw-dialog{background-color:#000;color:#e6e6e6}tw-debugger .panel{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;position:absolute;bottom:100%;left:-2px;right:0;padding:1em;overflow-y:scroll;overflow-x:hidden;border:inherit;box-sizing:content-box;background-color:#fff;border-bottom:solid #999 2px;border-top-left-radius:.5em;border-bottom-left-radius:.5em;font-size:.8em}tw-debugger .panel:empty,tw-debugger .panel[hidden]{display:none}tw-debugger.theme-dark .panel{background-color:#000;border-bottom-color:#666}tw-debugger .panel-source .panel-row-buttons{width:2rem}tw-debugger .panel-source .source-tags{width:20%;font-style:italic}tw-debugger .panel-row-source td{font-family:monospace;font-size:1rem;white-space:pre-wrap;overflow-wrap:anywhere;max-height:8rem;padding:1rem}tw-debugger .panel-rows{width:100%;overflow-x:scroll}tw-debugger .panel-rows>*{display:table-row}tw-debugger .panel-rows>div:nth-of-type(2n){background-color:#e6e6e6}tw-debugger .panel-tools .panel-rows>*,tw-debugger .panel-options .panel-rows>*{margin-top:.4rem;display:block}tw-debugger.theme-dark .panel-rows>div:nth-of-type(2n){background-color:#212121}tw-debugger .panel-row-buttons{text-align:right}tw-debugger .panel-variables .panel-rows:empty::before{content:"~ No variables ~";font-style:italic;color:#575757;text-align:center}tw-debugger .panel-enchantments .panel-rows:empty::before{content:"~ No enchantments ~";font-style:italic;color:#575757;text-align:center}tw-debugger .panel-errors .panel-rows:empty::before{content:"~ No errors... for now. ~";font-style:italic;color:#575757;text-align:center}tw-debugger .panel-errors .panel-rows:empty+.panel-errors-bottom{display:none}tw-debugger.theme-dark .panel-variables .panel-rows:empty::before,tw-debugger.theme-dark .panel-enchantments .panel-rows:empty::before,tw-debugger.theme-dark .panel-errors .panel-rows:empty::before{color:#a8a8a8}tw-debugger .panel-rows:empty+.panel-variables-bottom{display:none}tw-debugger th[data-col]{text-decoration:underline;cursor:pointer}tw-debugger th[data-col][data-order=asc]::after{content:"↓"}tw-debugger th[data-col][data-order=desc]::after{content:"↑"}tw-debugger .panel-storylets:not(.panel-exclusive) .storylet-exclusive,tw-debugger .panel-storylets:not(.panel-urgent) .storylet-urgent{display:none}tw-debugger .storylet-exclusive,tw-debugger .storylet-urgent,tw-debugger .storylet-open{text-align:center}tw-debugger .panel-variables-bottom{padding-top:5px}tw-debugger .enchantment-row{min-height:1.5em}tw-debugger .variable-path{opacity:.4}tw-debugger .temporary-variable-scope,tw-debugger .enchantment-local{font-family:sans-serif;font-weight:normal;opacity:.8;font-size:.75em}tw-debugger .temporary-variable-scope:not(:empty)::before,tw-debugger .enchantment-local:not(:empty)::before{content:" in "}tw-debugger .variable-name,tw-debugger .enchantment-name{font-family:monospace;font-weight:bold}tw-debugger .variable-type{color:#575757;font-weight:normal;text-overflow:ellipsis;overflow:hidden;max-width:10em}tw-debugger.theme-dark .variable-type{color:#a8a8a8}tw-debugger .error-row{display:table-row;background-color:rgba(230,101,204,.3)}tw-debugger .error-row:nth-of-type(2n){background-color:rgba(237,145,219,.3)}tw-debugger .error-row>*{display:table-cell;padding:.25em .5em}tw-debugger .error-row .error-message[title]:not([title=""]){cursor:help}tw-debugger .error-row .error-passage{color:#575757}tw-debugger.theme-dark .error-row .error-passage{color:#a8a8a8}tw-debugger .storylet-row{background-color:rgba(193,240,225,.3)}tw-debugger .storylet-row:nth-child(2n){background-color:rgba(152,231,204,.3)}tw-debugger .storylet-row.storylet-closed{font-style:italic;background-color:#fff}tw-debugger .storylet-row.storylet-closed:nth-child(2n){background-color:#e6e6e6}tw-debugger .storylet-row.storylet-closed>:not(.storylet-lambda){opacity:.6}.storylet-error tw-debugger .storylet-row{background-color:rgba(230,101,204,.3)}.storylet-error tw-debugger .storylet-row:nth-child(2n){background-color:rgba(237,145,219,.3)}tw-debugger .storylet-row .storylet-name,tw-debugger .storylet-row .storylet-value{display:inline-block;width:50%}tw-debugger .storylet-row .storylet-lambda{font-family:monospace;font-size:1rem;white-space:pre-wrap;overflow-wrap:anywhere}tw-debugger.theme-dark .storylet-row.storylet-closed{background-color:#000}tw-debugger.theme-dark .storylet-row.storylet-closed:nth-child(2n){background-color:#212121}tw-debugger .tabs{padding-bottom:.5em}tw-debugger .tab{border-radius:0px 0px .5em .5em;border-top:none;top:-2px}tw-debugger .resizer-h{position:absolute;height:14em;border-left:2px solid #999;border-right:2px solid #999;top:10px;left:4px;width:8px;cursor:ew-resize}tw-debugger.theme-dark .resizer-h{border-color:rgba(0,0,0,0) #666}tw-debugger .resizer-v{position:absolute;height:8px;border-top:2px solid #999;border-bottom:2px solid #999;margin-bottom:4px;top:4px;left:10px;width:95%;cursor:ns-resize;box-sizing:border-box}tw-debugger.theme-dark .resizer-v{border-color:#666 rgba(0,0,0,0)}tw-debugger mark{color:inherit;background-color:rgba(101,230,230,.3) !important}tw-dialog{z-index:999997;border:#fff solid 2px;padding:2em;color:#fff;background-color:#000;display:block}@media(min-width: 576px){tw-dialog{max-width:50vw}}tw-dialog input[type=text]{font-size:inherit;width:100%;border:solid #fff !important}tw-dialog-links{text-align:right;display:-ms-flexbox;display:flex;-ms-flex-pack:end;justify-content:flex-end}tw-backdrop{z-index:999996;position:fixed;top:0;left:0;right:0;bottom:0;background-color:rgba(0,0,0,.8);display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center}tw-backdrop~tw-backdrop{display:none}tw-link,.enchantment-link{cursor:pointer;color:#4169e1;font-weight:bold;text-decoration:none;transition:color .2s ease-in-out}tw-passage [style^=color] tw-link:not(:hover),tw-passage [style*=" color"] tw-link:not(:hover),tw-passage [style^=color][hover=true] tw-link:hover,tw-passage [style*=" color"][hover=true] tw-link:hover,tw-passage [style^=color] .enchantment-link:not(:hover),tw-passage [style*=" color"] .enchantment-link:not(:hover),tw-passage [style^=color][hover=true] .enchantment-link:hover,tw-passage [style*=" color"][hover=true] .enchantment-link:hover{color:inherit}tw-link:hover,.enchantment-link:hover{color:#00bfff}tw-link:active,.enchantment-link:active{color:#dd4b39}.visited{color:#6941e1}tw-passage [style^=color] .visited:not(:hover),tw-passage [style*=" color"] .visited:not(:hover),tw-passage [style^=color][hover=true] .visited:hover,tw-passage [style*=" color"][hover=true] .visited:hover{color:inherit}.visited:hover{color:#e3e}tw-broken-link{color:#933;border-bottom:2px solid #933;cursor:not-allowed}tw-passage [style^=color] tw-broken-link:not(:hover),tw-passage [style*=" color"] tw-broken-link:not(:hover),tw-passage [style^=color][hover=true] tw-broken-link:hover,tw-passage [style*=" color"][hover=true] tw-broken-link:hover{color:inherit}tw-link.enchantment-mouseover,.link.enchantment-mouseover,tw-expression.enchantment-mouseover>tw-link{color:inherit;font-weight:inherit;transition:none;cursor:inherit;border-bottom:2px dashed #999}tw-link.enchantment-mouseover:hover,tw-link.enchantment-mouseover:active,.link.enchantment-mouseover:hover,.link.enchantment-mouseover:active,tw-expression.enchantment-mouseover>tw-link:hover,tw-expression.enchantment-mouseover>tw-link:active{color:inherit}tw-link.enchantment-mouseover.enchantment-button,.link.enchantment-mouseover.enchantment-button,tw-expression.enchantment-mouseover>tw-link.enchantment-button{border-style:dashed}tw-link.enchantment-mouseout,.link.enchantment-mouseout,tw-expression.enchantment-mouseout>tw-link{color:inherit;font-weight:inherit;transition:none;cursor:inherit;border:rgba(64,149,191,.6) 1px solid;border-radius:.2em}tw-link.enchantment-mouseout:hover,tw-link.enchantment-mouseout:active,.link.enchantment-mouseout:hover,.link.enchantment-mouseout:active,tw-expression.enchantment-mouseout>tw-link:hover,tw-expression.enchantment-mouseout>tw-link:active{color:inherit}tw-link.enchantment-mouseout:hover,.link.enchantment-mouseout:hover,tw-expression.enchantment-mouseout>tw-link:hover{background-color:rgba(175,197,207,.75);border:rgba(0,0,0,0) 1px solid}tw-link.enchantment-dblclick,.link.enchantment-dblclick,tw-expression.enchantment-dblclick>tw-link{color:inherit;font-weight:inherit;transition:none;cursor:inherit;cursor:pointer;border:2px solid #999;border-radius:0}tw-link.enchantment-dblclick:hover,tw-link.enchantment-dblclick:active,.link.enchantment-dblclick:hover,.link.enchantment-dblclick:active,tw-expression.enchantment-dblclick>tw-link:hover,tw-expression.enchantment-dblclick>tw-link:active{color:inherit}tw-link.enchantment-dblclick:active,.link.enchantment-dblclick:active,tw-expression.enchantment-dblclick>tw-link:active{background-color:#999}tw-link.enchantment-button,.link.enchantment-button,.enchantment-button:not(.link) tw-link,.enchantment-button:not(.link) .link{border-radius:16px;border-style:solid;border-width:2px;text-align:center;padding:0px 8px;display:block}.enchantment-button{display:block}.enchantment-clickblock{cursor:pointer;width:100%;height:100%;display:block}.enchantment-clickblock>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;color:rgba(65,105,225,.5);transition:color .2s ease-in-out}.enchantment-clickblock>:not(tw-enchantment):hover::after{color:rgba(0,191,255,.5)}.enchantment-clickblock>:not(tw-enchantment):active::after{color:rgba(222,78,59,.5)}.enchantment-clickblock>:not(tw-enchantment)::after{box-shadow:inset 0 0 0 .5vmax}.enchantment-clickblock>tw-passage::after,.enchantment-clickblock>tw-sidebar::after{box-shadow:0 0 0 .5vmax}.enchantment-mouseoverblock>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;border:2px dashed #999}.enchantment-mouseoutblock>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;border:rgba(64,149,191,.6) 2px solid}.enchantment-mouseoutblock:hover>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;background-color:rgba(175,197,207,.75);border:rgba(0,0,0,0) 2px solid;border-radius:.2em}.enchantment-dblclickblock>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;cursor:pointer;border:2px solid #999}tw-dialog-links{padding-top:1.5em}tw-dialog-links tw-link{border-radius:16px;border-style:solid;border-width:2px;text-align:center;padding:0px 8px;display:block;display:inline-block}html{margin:0;height:100%;overflow-x:hidden}*,:before,:after{position:relative;box-sizing:inherit}body{margin:0;height:100%}tw-storydata{display:none}tw-story{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;font:100% Georgia,serif;box-sizing:border-box;width:100%;min-height:100%;font-size:1.5em;line-height:1.5em;padding:5% 5%;overflow:hidden;background-color:#000;color:#fff}tw-story [style*=content-box] *{box-sizing:border-box}@media(min-width: 576px){tw-story{padding:5% 20%}}tw-story tw-consecutive-br{display:block;height:1.6ex;visibility:hidden}tw-story select{background-color:rgba(0,0,0,0);font:inherit;border-style:solid;padding:2px}tw-story select:not([disabled]){color:inherit}tw-story textarea{resize:none;background-color:rgba(0,0,0,0);font:inherit;color:inherit;border-style:none;padding:2px}tw-story input[type=text]{background-color:rgba(0,0,0,0);font:inherit;color:inherit;border-style:none}tw-story input[type=checkbox]{transform:scale(1.5);margin:0 .5em .5em .5em;vertical-align:middle}tw-story tw-noscript{animation:appear .8s}tw-passage{display:block}tw-sidebar{text-align:center;display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between}@media(min-width: 576px){tw-sidebar{left:-5em;width:3em;position:absolute;-ms-flex-direction:column;flex-direction:column}tw-enchantment[style*=width]>tw-sidebar{width:inherit}}tw-icon{display:inline-block;margin:.5em 0;font-size:66px;font-family:"Verdana",sans-serif}tw-icon[alt]{opacity:.2;cursor:pointer}tw-icon[alt]:hover{opacity:.4}tw-icon[data-label]::after{font-weight:bold;content:attr(data-label);font-size:20px;bottom:-20px;left:-50%;white-space:nowrap}tw-meter{display:block}tw-hook:empty,tw-expression:empty{display:none}tw-error{display:inline-block;border-radius:.2em;padding:.2em;font-size:1rem;cursor:help;white-space:pre-wrap}tw-error.error{background-color:rgba(223,58,190,.6);color:#fff}tw-error.warning{background-color:rgba(223,140,58,.6);color:#fff;display:none}.debug-mode tw-error.warning{display:inline}tw-error-explanation{display:block;font-size:.8rem;line-height:1rem}tw-open-button,tw-folddown{cursor:pointer;line-height:0em;border-radius:4px;border:1px solid rgba(255,255,255,.5);font-size:.8rem;margin:0 .2rem;padding:3px;white-space:pre}tw-folddown::after{content:"▶"}tw-folddown.open::after{content:"▼"}tw-open-button[replay]{display:none}tw-error tw-open-button,tw-eval-replay tw-open-button{display:inline !important}tw-open-button::after{content:attr(label)}tw-notifier{border-radius:.2em;padding:.2em;font-size:1rem;background-color:rgba(223,182,58,.4);display:none}.debug-mode tw-notifier{display:inline}tw-notifier::before{content:attr(message)}tw-colour{border:1px solid #000;display:inline-block;width:1em;height:1em}tw-enchantment:empty{display:none}h1{font-size:3em}h2{font-size:2.25em}h3{font-size:1.75em}h1,h2,h3,h4,h5,h6{line-height:1em;margin:.3em 0 .6em 0}pre{font-size:1rem;line-height:initial}small{font-size:70%}big{font-size:120%}mark{color:rgba(0,0,0,.6);background-color:#ff9}ins{color:rgba(0,0,0,.6);background-color:rgba(255,242,204,.5);border-radius:.5em;box-shadow:0em 0em .2em #ffe699;text-decoration:none}center{text-align:center;margin:0 auto;width:60%}blink{text-decoration:none;animation:fade-in-out 1s steps(1, end) infinite alternate}tw-align{display:block}tw-columns{display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;-ms-flex-pack:justify;justify-content:space-between}.transition-in{animation:appear 0ms step-start}.transition-out{animation:appear 0ms step-end}[data-t8n^=dissolve].transition-in,[data-t8n=fade].transition-in{animation:appear .8s}[data-t8n^=dissolve].transition-out,[data-t8n=fade].transition-out{animation:appear .8s reverse}[data-t8n^=shudder].transition-in{display:inline-block !important;animation:shudder-in .8s}[data-t8n^=shudder].transition-out{display:inline-block !important;animation:shudder-in .8s reverse}[data-t8n^=rumble].transition-in{display:inline-block !important;animation:rumble-in .8s}[data-t8n^=rumble].transition-out{display:inline-block !important;animation:rumble-in .8s reverse}[data-t8n^=pulse].transition-in{animation:pulse .8s;display:inline-block !important}[data-t8n^=pulse].transition-out{animation:pulse .8s reverse;display:inline-block !important}[data-t8n^=zoom].transition-in{animation:zoom-in .8s;display:inline-block !important}[data-t8n^=zoom].transition-out{animation:zoom-in .8s reverse;display:inline-block !important}[data-t8n^=blur].transition-in{animation:blur .8s;display:inline-block !important}[data-t8n^=blur].transition-out{animation:blur .8s reverse;display:inline-block !important}[data-t8n^=slideleft].transition-in{animation:slide-left .8s;display:inline-block !important}[data-t8n^=slideleft].transition-out{animation:slide-right .8s reverse;display:inline-block !important}[data-t8n^=slideright].transition-in{animation:slide-right .8s;display:inline-block !important}[data-t8n^=slideright].transition-out{animation:slide-left .8s reverse;display:inline-block !important}[data-t8n^=slideup].transition-in{animation:slide-up .8s;display:inline-block !important}[data-t8n^=slideup].transition-out{animation:slide-down .8s reverse;display:inline-block !important}[data-t8n^=slidedown].transition-in{animation:slide-down .8s;display:inline-block !important}[data-t8n^=slidedown].transition-out{animation:slide-up .8s reverse;display:inline-block !important}[data-t8n^=fadeleft].transition-in{animation:fade-left .8s;display:inline-block !important}[data-t8n^=fadeleft].transition-out{animation:fade-right .8s reverse;display:inline-block !important}[data-t8n^=faderight].transition-in{animation:fade-right .8s;display:inline-block !important}[data-t8n^=faderight].transition-out{animation:fade-left .8s reverse;display:inline-block !important}[data-t8n^=fadeup].transition-in{animation:fade-up .8s;display:inline-block !important}[data-t8n^=fadeup].transition-out{animation:fade-down .8s reverse;display:inline-block !important}[data-t8n^=fadedown].transition-in{animation:fade-down .8s;display:inline-block !important}[data-t8n^=fadedown].transition-out{animation:fade-up .8s reverse;display:inline-block !important}[data-t8n^=flicker].transition-in{animation:flicker .8s}[data-t8n^=flicker].transition-out{animation:flicker .8s reverse}
 </style>
 </head>
 <body>
-<tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Mini-Assignment #2.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Mini-Assignment #2" startnode="1" creator="Twine" creator-version="2.9.2" format="Harlowe" format-version="3.3.9" ifid="D4AD79D2-0857-4A2B-9867-F3A404EB07DB" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">img{border-radius: 12px;}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="The War of the Roses" tags="" position="900,400" size="100,100">In our class, we’ve primarily focused on the significant events that shaped England during the Tudor dynasty, however, I wanted to learn more about how the Tudors came to power and the conflict that set the stage for their reign: the War of the Roses.
+<tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play HIST 390 - Final Project - Group 7.</tw-noscript></noscript></tw-story>
+<tw-storydata name="HIST 390 - Final Project - Group 7" startnode="1" creator="Twine" creator-version="2.9.2" format="Harlowe" format-version="3.3.9" ifid="F2383B96-9155-49ED-B27B-C19D9DEED2E8" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">img{border-radius: 12px;}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Introduction" tags="" position="2350,100" size="100,100">//England, 1455.//
+The House of Lancaster and the House of York are locked in a bitter feud for control of the English throne. This is a time of blooshsed, betrayal, and shifting loyalties.
 
-The War of the Roses was a brutal and turbulent civil war that tore England apart for three decades (1455–1487). It was fought between two rival branches of the royal House of Plantagenet—the Lancasters, symbolized by the red rose, and the Yorks, symbolized by the white rose. This power struggle, rooted in issues of weak leadership and conflicting claims to the throne, ultimately led to the fall of the Plantagenets and the rise of the Tudors.
+==&gt;&lt;==
+&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/York_victory_over_Lancaster.svg/300px-York_victory_over_Lancaster.svg.png&quot;&gt;
+&lt;==
+You have the opportunity to shape history. Will you rise to power, survive the chaos, or perish in the flames of war?
 
-This war was not just a series of battles for the crown but a clash of powerful families, shifting alliances, and political maneuvering that shaped the future of England. It’s a fascinating period that led directly to the emergence of Henry Tudor, who became King Henry VII, marking the beginning of the Tudor dynasty and a new era in English history.
+&#39;&#39;What will you choose?&#39;&#39;
 
-Dive into the causes, key players, and battles of the War of the Roses, and uncover how this conflict laid the foundation for the Tudor period. Learn how this war’s outcome changed the course of England’s destiny forever.
+(text-colour:#ffe066)[[[Character Selection]]]
 
-(text-colour:#ffe066)+(after:2s)[[[Explore Key Battles-&gt;Key Battles]]
-[[Explore Politics &amp; Alliances-&gt;Politics &amp; Alliances]]
-[[Explore Key Players-&gt;Key Players]]]
-(if: $points &gt;= 12)+(text-colour:#ffe066)[[[Proceed to The War&#39;s Legacy-&gt;The War&#39;s Legacy]]]
-(text-colour:#ffe066)+(else:)[&#39;&#39;Explore The War&#39;s Legacy (Locked)&#39;&#39; (text-colour:white)[- Explore and gather 12 points to access this section]]
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="2" name="Character Selection" tags="" position="2350,200" size="100,100">1. (text-colour:#ffe066)[[[Common Soldier|Common Soldier #1]]] - A foot soldier caught in the tides of war, fighting for survival and honor.
+2. (text-colour:#ffe066)[[[Elizabeth of York|Elizabeth of York #1]]] - A noblewoman whose marriage will determine the fate of England.
+3. (text-colour:#ffe066)[[[Margaret Beaufort|Margaret Beaufort #1]]] - A mother with a single ambition: securing the throne for her son.
+4. (text-colour:#ffe066)[[[Elizabeth Woodville|Elizabeth Woodville #1]]] - A queen who wields her beauty and cunning to protect her family.
+5. (text-colour:#ffe066)[[[Henry VI|Henry VI #1a]]] - A king who frailty threatens to destroy the kingdom.
+6. (text-colour:#ffe066)[[[Henry Tudor|Henry Tudor #1]]] - A young exile whith a distant claim to the throne.
+7. (text-colour:#ffe066)[[[Edward IV|Edward IV #1]]] - A warrior king who must secure his dynasty.
+8. (text-colour:#ffe066)[[[Richard III|Richard III #1]]] - A prince determined to seize the crown at any cost. 
 
-You have $points points.
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="3" name="Common Soldier #1" tags="" position="250,300" size="100,100">==&gt;&lt;==
+&lt;img
+src=&quot;https://images.immediate.co.uk/production/volatile/sites/7/2024/07/2BGEM9M-2dd7212-e1721916569235.jpg?quality=90&amp;resize=556,371&quot;&gt;
+&lt;==
 
-(set: $visitedBattles to false)
-(set: $visitedPolitics to false)
-(set: $visitedPlayers to false)
+You are a common soldier serving in the army of House York. The year is 1455, and the first shots of the War of the Roses are about to be fired a the Battle of St. Albans.
 
-(set: $visitedStAlbans to false)
-(set: $visitedTowton to false)
-(set: $visitedBosworth to false)
-(set: $visitedBarnet to false)
+You sit by the campfire, the cold night air biting at your skin. Tomorrow, you will  face your first battle.
 
-(set: $visitedMarriage to false)
-(set: $visitedForeign to false)
-(set: $visitedNobility to false)
-(set: $visitedChurch to false)
+What do you do?
 
-(set: $visitedHenryVI to false)
-(set: $visitedEdwardIV to false)
-(set: $visitedRichardIII to false)
-(set: $visitedHenryTudor to false)
+(text-colour:#ffe066)[[[Prepare your armor and sword for battle.|Common Soldier #2a]]]
+(text-colour:#ffe066)[[[Sneak out of camp to scout the enemy&#39;s position.|Common Soldier #2b]]]
 
-
-(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))
-
-</tw-passagedata><tw-passagedata pid="2" name="Key Players" tags="" position="1300,575" size="100,100">The War of the Roses was driven by powerful individuals whose ambitions, decisions, and leadership shaped the course of history. At the heart of the conflict was Henry VI, the mentally fragile Lancastrian king whose ineffective rule sparked the war. His rival, the ambitious and battle-hardened Edward IV, rose from the House of York to seize the throne, only to face opposition from within his own ranks. The infamous Richard III, whose brief and controversial reign has been the subject of intense debate, played a pivotal role in the final years of the war. And finally, Henry Tudor, a distant Lancastrian claimant, emerged from exile to claim victory at Bosworth Field, fouding the Tudor dynasty. Each of these figures left a lasting mark on the war and on English history. Explore their stories and gain a deeper understanding of how personal ambition shaped the struggle for the crown. 
-
-(text-colour:#ffe066)+(after:2s)[[[Henry VI]] 
-[[Edward IV]]
-[[Richard III]]
-[[Henry Tudor]]
-
-[[Back to The War of the Roses-&gt;The War of the Roses]]]
-
-You have $points points.
-
-(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="3" name="Key Battles" tags="" position="500,575" size="100,100">The War of the Roses was marked by several decisive battles that shaped the course of English history. Each conflict shifted the balance of power between the Lancasters and the Yorks, bringing dramatic changes to the political landscape. These confrontations defined the struggle for the crown. Explore these battles to understand how military victories, and defeats, shaped the rise and fall of kings.
-
-(text-colour:#ffe066)+(after:2s)[[[Battle of St. Albans (1455)]]
-[[Battle of Towton (1461)]]
-[[Battle of Barnet &amp; Tewkesbury (1471)]]
-[[Battle of Bosworth Field (1485)]]
-
-[[Back to The War of the Roses-&gt;The War of the Roses]]]
-
-You have $points points.
-
-(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="4" name="The War&#39;s Legacy" tags="" position="900,250" size="100,100">The War of the Roses not only marked the end of the medieval period in England, but also set the stage for the transformative reign of the Tudors. The thirty-year conflict left the country divided and weary, but the marriage of Henry VII and Elizabeth of York in 1486 united the rival houses of Lancaster and York, bringing a symbolic and political end to the civil war.
-
-With Henry VII&#39;s victory at the Battle of Bosworth Field in 1485 and his subsequent consolidation of power, England entered a new era of stability. Henry carefully managed the nobility, avoided costly wars, and solidified his claim to the throne through stategic marriages and treaties. His rule laid the groundwork for the Tudor dynasty, which would come to shape England&#39;s future for more than a century. 
-
-The War of the Roses also served as a cautionary tale about the dangers of unchecked ambition and unstable leadership. The violence and bloodshed caused by competing noble factions left a profound impact on the English monarchy. Future Tudor monarchs, particularly Henry VIII and Elizabeth I, learned from these lessons, working to centralize power in the crown and diminish the incluence of potentially and rebellious nobles.
-
-Congratulations! You have explored the major aspects of the War of the Roses and now understand the legacy it left behind!
-
-Thank you for participating!!!
-
-(text-colour:#ffe066)+(after:2s)[[[Bibliography]]] 
-(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="5" name="Battle of Towton (1461)" tags="" position="450,775" size="100,100">The Battle of Towton, fought on March 29, 1461, was the largest and bloodiest battle of the War of the Roses, involving around 50,000 soldiers. This decisive confrontation saw Edward IV, leader of the Yorkist forces, confront the Lancastrian army in a snowstorm in Yorkshire. Lasting for hours, the clash ended with a devastating defeat for the Lancastrians, solidifying Edward’s claim to the throne and forcing the Lancastrian king, Henry VI, into hiding. Towton was a turning point in the war, showcasing the brutality of the conflict and marking the beginning of Yorkist dominance.
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="4" name="Common Soldier #2a" tags="" position="100,400" size="100,100">You spend the night meticulously preparing your armor and sharpening your sword. As dawn breaks, you feel ready for the fight ahead.
 ==&gt;&lt;==
 
-&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Richard_Caton_Woodville%27s_The_Battle_of_Towton.jpg/300px-Richard_Caton_Woodville%27s_The_Battle_of_Towton.jpg&quot;&gt;
+&lt;img
+src=&quot;https://warfarehistorynetwork.com/wp-content/uploads/Hand-gun-1-e1647622247616.jpg&quot;&gt;
+&lt;==
 
-(if: not $visitedTowton)[
-  (set: $points to $points + 1)
-  (set: $visitedTowton to true)
-]
-(text-colour:#ffe066)[[[Back to Key Battles-&gt;Key Battles]]]
+The horns sound, and the battle begins. Chaos erupts as arrows fly and swords clash.
 
-You have $points points.
+(text-colour:#ffe066)[[[Charge into the front lines with your commander.|Common Soldier #3a]]]
+(text-colour:#ffe066)[[[Hold back and defend the camp.|Common Soldier #3b]]]
 
-(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="6" name="Battle of Bosworth Field (1485)" tags="" position="650,675" size="100,100">The Battle of Bosworth Field, fought on August 22, 1485, was the climactic battle that ended the War of the Roses and brought the Tudor dynasty to power. Henry Tudor, leading a Lancastrian force, faced King Richard III on the battlefield in a contest for the English throne. Richard’s death in battle, famously fighting to the end, marked the downfall of the Plantagenet line and paved the way for Henry’s coronation as King Henry VII. The victory was more than just a change of rulers--it signified the end of the medieval period in England and the start of a new era under the Tudors.
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="5" name="Common Soldier #2b" tags="" position="400,400" size="100,100">Night falls over the Yorkist camp, and the flickering glow of campfires barely illuminates the faces of your comrades. Restless and eager to prove your worth--or perhaps to ease your anxiety--you decide to take a risk.
+
+With a quick glance to ensure no one is watching, you slip into the shadows, your footsteps light and deliberate. Your heart pounds in your chest as you move closer to enemy lines, the distant murmurs of opposing soldiers becoming clearer with each step.
+
+(text-colour:#ffe066)[[[Continue moving closer to the enemy camp to gather valuable intelligence.|Common Soldier #3c]]]
+(text-colour:#ffe066)[[[Remain hidden at the edge of the camp and observe from a safe distance.|Common Soldier #3d]]]
+(text-colour:#ffe066)[[[Turn back and return to your own camp before you are discovered.|Common Soldier #3e]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="6" name="Common Soldier #3a" tags="" position="0,500" size="100,100">You rush into battle, fighting with all your might. The enemy is fierce, but your courage pushes you forward.
 ==&gt;&lt;==
 
-&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Battle_of_Bosworth_by_Philip_James_de_Loutherbourg.jpg/300px-Battle_of_Bosworth_by_Philip_James_de_Loutherbourg.jpg&quot;&gt;
+&lt;img
+src=&quot;https://warfarehistorynetwork.com/wp-content/uploads/wars-of-the-roses-1.jpg&quot;&gt;
+&lt;==
 
-(if: not $visitedBosworth)[
-  (set: $points to $points + 1)
-  (set: $visitedBosworth to true)
-]
-(text-colour:#ffe066)[[[Back to Key Battles-&gt;Key Battles]]]
+Suddenly, an enemy knight charges toward you.
 
-You have $points points.
+(text-colour:#ffe066)[[[Dodge and counterattack.|Common Soldier #4a]]]
+(text-colour:#ffe066)[[[Stand your ground and brace for impact.|Common Soldier #4b]]]
 
-(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="7" name="Marriage Alliances" tags="" position="750,675" size="100,100">Marriage alliances were a crucial strategy in the War of the Roses, often used to forge powerful connections and secure loyalty among rival factions. Key figures, such as Edward IV, used marital ties to strengthen the Yorkist claim and diminish Lancastrian power. Edward’s marriage to Elizabeth Woodville, a widow with Lancastrian ties, not only brought her family into the Yorkist camp but also gained him popular support. Similarly, Henry Tudor’s marriage to Elizabeth of York after his victory at Bosworth symbolized the unification of the warring houses and was essential for stabilizing his newly established Tudor dynasty.
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="7" name="Common Soldier #3b" tags="" position="200,500" size="100,100">You remain behind to defend the camp. The battle rages on, and suddenly, a group of enemy soldiers attack.
 
-(if: not $visitedMarriage)[
-  (set: $points to $points + 1)
-  (set: $visitedMarriage to true)
-]
-(text-colour:#ffe066)[[[Back to Politics &amp; Alliances-&gt;Politics &amp; Alliances]]]
+(text-colour:#ffe066)[[[Organize the defense and fight them off.|Common Soldier #4c]]]
+(text-colour:#ffe066)[[[Flee into the forest to save yourself.|Common Soldier #4d]]]
 
-You have $points points.
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="8" name="Common Soldier #3c" tags="" position="500,500" size="100,100">You inch closer to the enemy camp, carefully avoiding patrols and listening for any valuable information. As you crouch behind a bush, you overhear two soldiers discussing their commander&#39;s plans for a surprise dawn attack.
 
-(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))
-</tw-passagedata><tw-passagedata pid="8" name="Foreign Involvement" tags="" position="850,775" size="100,100">Foreign involvement played a significant role in the War of the Roses, as neighboring powers sought to capitalize on England’s internal strife. France and Burgundy, in particular, were deeply invested in the conflict, providing support to the factions that aligned with their interests. The Yorkists, for instance, received aid from Charles the Bold of Burgundy, while the Lancastrians had connections with the French court. This foreign interference not only escalated the conflict but also complicated the loyalties of English nobles, as many were swayed by the promise of military or financial support from abroad.
+(text-colour:#ffe066)[[[Attempt to steal a map from the enemy camp to confirm their plans|Common Soldier #4e]]]
+(text-colour:#ffe066)[[[Retreat quietly and report what you&#39;ve overheard to your commander|Common Soldier #4f]]]
 
-(if: not $visitedForeign)[
-  (set: $points to $points + 1)
-  (set: $visitedForeign to true)
-]
-(text-colour:#ffe066)[[[Back to Politics &amp; Alliances-&gt;Politics &amp; Alliances]]]
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="9" name="Common Soldier #3d" tags="" position="300,500" size="100,100">You remain hidden at the edge of the camp, observing troop movements and noting the size of the enemy forces. You spot a group of scouts preparing to leave the camp.
 
-You have $points points.
+(text-colour:#ffe066)[[[Follow the scouts to gather more information.|Common Soldier #4g]]]
+(text-colour:#ffe066)[[[Return to your own camps to report the enemy&#39;s strength.|Common Soldier #4h]]]
 
-(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="9" name="The Role of the Nobility" tags="" position="950,775" size="100,100">The English nobility played a vital role in the War of the Roses, with their loyalties swinging between the rival factions. Powerful families, such as the Nevilles and the Percys, held significant sway and often shifted allegiances based on personal ambition and political gain. The Earl of Warwick, known as the &quot;Kingmaker,&quot; exemplified this dynamic; initially a supporter of Edward IV, he later allied with the Lancastrians. The constant competition for power among the nobility not only fueled the conflict but also shaped the outcomes of key battles.
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="10" name="Common Soldier #4a" tags="" position="0,550" size="100,100">You sidestep the knight&#39;s charge and deliver a swift counterattack. The knight falls, and your comrades cheer.
 
-(if: not $visitedNobility)[
-  (set: $points to $points + 1)
-  (set: $visitedNobility to true)
-]
-(text-colour:#ffe066)[[[Back to Politics &amp; Alliances-&gt;Politics &amp; Alliances]]]
+&#39;&#39;You survive the Battle of St. Albans and are promoted to a higher rank.&#39;&#39;
 
-You have $points points.
+(text-colour:#ffe066)[[[Next: Towton (1461)]]]
 
-(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="10" name="Richard III" tags="" position="1350,775" size="100,100">Richard III, the younger brother of Edward IV, remains one of the most controversial figures in English history. After Edward’s death, Richard seized the throne from his young nephew, Edward V, sparking outrage and suspicion over the fate of the &quot;Princes in the Tower,&quot; who mysteriously disappeared under his watch. Despite his questionable rise to power, Richard was an able ruler and skilled military commander. His reign, however, was cut short at the Battle of Bosworth Field in 1485, where he was defeated and killed by Henry Tudor’s forces, marking the end of the Plantagenet dynasty.
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="11" name="Margaret Beaufort #1" tags="" position="1450,300" size="100,100">//England, 1471.//
 ==&gt;&lt;==
 
-&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Richard_III_earliest_surviving_portrait.jpg/220px-Richard_III_earliest_surviving_portrait.jpg&quot;&gt;
+&lt;img
+src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Margaret_Beaufort_Wewyck_Portrait.png/220px-Margaret_Beaufort_Wewyck_Portrait.png&quot;&gt;
+&lt;==
 
-(if: not $visitedRichardIII)[
-  (set: $points to $points + 1)
-  (set: $visitedRichardIII to true)
-]
-(text-colour:#ffe066)[[[Back to Key Players-&gt;Key Players]]]
+You are Margaret Beaufort, mother of Henry Tudor, the last hope for the Lancastrian cause. Your sone is in exile, but you are determined to see him on the throne of England.
 
-You have $points points.
+Your husband, Thomas Stanley, is a powerful noble who could be a valuable ally--or a dangerous obstacle.
 
-(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="11" name="Edward IV" tags="" position="1250,775" size="100,100">Edward IV, a charismatic and capable leader from the House of York, was instrumental in turning the tide of the War of the Roses in favor of his faction. After his decisive victory at the Battle of Towton in 1461, Edward seized the throne and became one of England’s most successful warrior-kings. However, his reign was not without challenges, as political infighting and shifting allegiances threatened his rule. Despite these setbacks, Edward’s military prowess and his ability to rally supporters ensured his dominance, solidifying the Yorkist hold on the crown until his death in 1483.
+(text-colour:#ffe066)[[[Attempt to persuade Thomas Stanley to support Henry.|Margaret Beaufort #2a]]]
+(text-colour:#ffe066)[[[Seek alliances with other noble families.|Margaret Beaufort #2b]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="12" name="Elizabeth Woodville #1" tags="" position="2050,300" size="100,100">//England, 1461.//
 ==&gt;&lt;==
 
-&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/King_Edward_IV.jpg/220px-King_Edward_IV.jpg&quot;&gt;
+&lt;img
+src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/ElizabethWoodville.JPG/220px-ElizabethWoodville.JPG&quot;&gt;
+&lt;==
 
-(if: not $visitedEdwardIV)[
-  (set: $points to $points + 1)
-  (set: $visitedEdwardIV to true)
-]
-(text-colour:#ffe066)[[[Back to Key Players-&gt;Key Players]]]
+You are Elizabeth Woodville, widow of Sir John Grey and a mother of two sons. The Wars of the Roses have left you and your family in a precarious position.
 
-You have $points points.
+When Edward IV of York ascends the throne, he offers you a chance to secure your family&#39;s future--but it comes with risks. Marrying him would elevate you to Queen of England, but alienate powerful Yorkist nobles.
 
-(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="12" name="Henry Tudor" tags="" position="1450,675" size="100,100">Henry Tudor, later known as Henry VII, was the unlikely Lancastrian claimant who would emerge victorious from the War of the Roses and establish the Tudor dynasty. Born in exile and with a tenuous claim to the throne through his mother, Margaret Beaufort, Henry returned to England in 1485 to challenge Richard III. His victory at the Battle of Bosworth Field and subsequent marriage to Elizabeth of York united the warring houses of Lancaster and York, bringing a symbolic end to the conflict. Henry’s reign marked the beginning of a new era of stability and set the foundation for the powerful Tudor dynasty.
+(text-colour:#ffe066)[[[Accept Edward&#39;s proposal and become Queen.|Elizabeth Woodville #2a]]]
+(text-colour:#ffe066)[[[Reject Edward&#39;s offer and seek protection from your family.|Elizabeth Woodville #2b]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="13" name="Elizabeth of York #1" tags="" position="850,300" size="100,100">//England, 1483.//
 ==&gt;&lt;==
 
-&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Enrique_VII_de_Inglaterra%2C_por_un_artista_an%C3%B3nimo.jpg/220px-Enrique_VII_de_Inglaterra%2C_por_un_artista_an%C3%B3nimo.jpg&quot;&gt;
+&lt;img
+src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/British_School%2C_16th_century_-_Elizabeth_of_York_%281465-1503%29_-_RCIN_403447_-_Royal_Collection.jpg/220px-British_School%2C_16th_century_-_Elizabeth_of_York_%281465-1503%29_-_RCIN_403447_-_Royal_Collection.jpg&quot;&gt;
+&lt;==
 
-(if: not $visitedHenryTudor)[
-  (set: $points to $points + 1)
-  (set: $visitedHenryTudor to true)
-]
-(text-colour:#ffe066)[[[Back to Key Players-&gt;Key Players]]]
+You are Elizabeth of York, daughter of King Edward IV of the House of York. Your family has been at the center of the Wars of the Roses for decades, but now your life hangs in the balance.
 
-You have $points points.
+Your father is dead, your brothers--the Princes in the Tower--are missing, and your uncle, Richard III, has seized the throne. The fate of the Yorkist line now rests with you.
 
-(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="13" name="Battle of Barnet &amp; Tewkesbury (1471)" tags="" position="550,775" size="100,100">The twin battles of Barnet and Tewkesbury in 1471 were pivotal moments that restored Edward IV to the throne after a period of instability. At Barnet, Edward’s forces clashed with his former ally, the powerful Earl of Warwick, known as the “Kingmaker,” who had switched sides to support the Lancastrian cause. Edward’s victory at Barnet eliminated Warwick as a threat. Just weeks later, at Tewkesbury, Edward crushed the remaining Lancastrian forces, leading to the death of Henry VI’s son and heir, Prince Edward. These victories marked the end of major Lancastrian resistance and reestablished Yorkist control.
-==&gt;&lt;==
+You are in sanctuary with your mother, Elizabeth Woodville, at Westminster Abbey. Rumors swirl that Richard seeks to marry you to solidify his claim to the throne. 
 
-&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/MS_Ghent_-_Battle_of_Tewkesbury.jpg/300px-MS_Ghent_-_Battle_of_Tewkesbury.jpg&quot;&gt;
+(text-colour:#ffe066)[[[Consider the marriage proposal from Richard III.|Elizabeth of York #2a]]]
+(text-colour:#ffe066)[[[Secretly negotiate with Henry Tudor, the exiled Lancastrian claimant.|Elizabeth of York #2b]]]
 
-(if: not $visitedBarnet)[
-  (set: $points to $points + 1)
-  (set: $visitedBarnet to true)
-]
-(text-colour:#ffe066)[[[Back to Key Battles-&gt;Key Battles]]]
-
-You have $points points.
-
-(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="14" name="Henry VI" tags="" position="1150,675" size="100,100">Henry VI, the Lancastrian king at the heart of the War of the Roses, was a weak and indecisive ruler whose mental instability contributed to the conflict. Ascending the throne as an infant, Henry’s long reign was marked by periods of insanity and an inability to manage the rival factions in his court. His lack of leadership created a power vacuum that allowed the ambitious Duke of York and others to challenge his authority. Though Henry was a pious and gentle man, his reign saw England fall into chaos, and he became a figurehead in the bitter struggle between Lancaster and York.
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="14" name="Henry VI #1a" tags="" position="2650,300" size="100,100">//England, 1455.//
 ==&gt;&lt;==
 
 &lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/King_Henry_VI_from_NPG_%282%29.jpg/220px-King_Henry_VI_from_NPG_%282%29.jpg&quot;&gt;
+&lt;==
 
-(if: not $visitedHenryVI)[
-  (set: $points to $points + 1)
-  (set: $visitedHenryVI to true)
-]
-(text-colour:#ffe066)[[[Back to Key Players-&gt;Key Players]]]
+You are Henry VI of the House of Lancaster, the King of England, but your rule is precarious. The nobility is divided, your mental health is fragile, and your kingdom is on the verge of civil war.
 
-You have $points points.
+Your wife, Margaret of Anjou, is fiercely loyal and determined to protect your throne, but powerful nobles like Richard, Duke of York, challenge your authority.
 
-(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="15" name="Bibliography" tags="" position="900,100" size="100,100">History Matters. (2018, March 20). Ten minute English and British History #16 - The Wars of the Roses Video. YouTube. https://www.youtube.com/watch?v=uNcBrrMoyL8
+(text-colour:#ffe066)[[[Take a more active role in ruling and suppress dissent.|Henry VI #2a]]]
+(text-colour:#ffe066)[[[Entrust your wife and loyal nobles to handle the conflict.|Henry VI #2b]]]
 
-Thurley, S. (2017). Houses of power: The Places that Shaped the Tudor World. Random House.
-
-Tudor dynasty. (2024, July 12). Wikipedia. Retrieved 03:52, October 3, 2024 from https://simple.wikipedia.org/w/index.php?title=Tudor_dynasty&amp;oldid=9645780.
-
-Wikipedia contributors. (2024, September 29). Wars of the Roses. In Wikipedia, The Free Encyclopedia. Retrieved 03:53, October 3, 2024, from https://en.wikipedia.org/w/index.php?title=Wars_of_the_Roses&amp;oldid=1248340387
-
-(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="16" name="The Role of the Church" tags="" position="1050,675" size="100,100">The Church, while often attempting to maintain neutrality during the War of the Roses, was a significant player in the political landscape of 15th-century England. Bishops and archbishops held considerable influence over both the nobility and the common people, and their support or opposition could sway the fortunes of rival factions. The Church’s attempts to mediate peace between the warring houses often fell short, as both sides sought to gain the upper hand. Moreover, the Church’s financial resources and its ability to mobilize support among the populace made it an essential ally or enemy in the struggle for power.
-
-(if: not $visitedChurch)[
-  (set: $points to $points + 1)
-  (set: $visitedChurch to true)
-]
-(text-colour:#ffe066)[[[Back to Politics &amp; Alliances-&gt;Politics &amp; Alliances]]]
-
-You have $points points.
-
-(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="17" name="Battle of St. Albans (1455)" tags="" position="350,675" size="100,100">The Battle of St. Albans was the opening conflict of the War of the Roses, setting the stage for decades of civil war. Fought on May 22, 1455, in the streets of the small town of St. Albans, it was a surprise Yorkist attack led by Richard, Duke of York, against the Lancastrian forces loyal to King Henry VI. The Yorkists emerged victorious, capturing King Henry and effectively beginning the struggle for control over the English crown. Although relatively small in scale, the battle demonstrated the ferocity of the rivalry between the two houses and made it clear that this would be no brief conflict.
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="15" name="Henry Tudor #1" tags="" position="3250,300" size="100,100">//Brittany, 1471.//
 ==&gt;&lt;==
 
-&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/York_victory_over_Lancaster.svg/300px-York_victory_over_Lancaster.svg.png&quot;&gt;
+&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Enrique_VII_de_Inglaterra%2C_por_un_artista_an%C3%B3nimo.jpg/220px-Enrique_VII_de_Inglaterra%2C_por_un_artista_an%C3%B3nimo.jpg&quot;&gt;
+&lt;==
 
-(if: not $visitedStAlbans)[
-  (set: $points to $points + 1)
-  (set: $visitedStAlbans to true)
-]
-(text-colour:#ffe066)[[[Back to Key Battles-&gt;Key Battles]]]
+You are Henry Tudor, the last hope of the House of Lancaster. Your father, Edmund Tudor, died before you were born, and your mother, Margaret Beaufort, has been a guiding force in your life, ensuring your safety and survival.
 
-You have $points points.
+The House of York controls England, and Edward IV sits on the throne. Richard III, Edward’s brother, also stands as a formidable obstacle to your claim.
 
-(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="18" name="Politics &amp; Alliances" tags="" position="900,575" size="100,100">The War of the Roses wasn&#39;t just fought on the battlefield--it was also a war of politics, alliances, and strategy. Behind the scenes, marriages were used to forge powerful bonds, as seen in the politically charged unions that shaped the conflict, while foreign powers like France and Burgundy played critical roles in supporting rival factions. The English nobility, from ambitious power brokers like Warwick the Kingmaker to those who switched allegiances, had immense influence over the war&#39;s direction. Even the Church, striving to maintain neutrality, wielded considerable political clout. These alliances and shifting loyalties were as crucial as any battle. Explore them to understand how the war unfolded and ultimately led to the rise of the Tudors. 
+You have spent years in exile, but the political tides are shifting. It is time to decide your future.
 
-(text-colour:#ffe066)+(after:2s)[[[Marriage Alliances]] 
-[[Foreign Involvement]] 
-[[The Role of the Nobility]]
-[[The Role of the Church]]
+(text-colour:#ffe066)[[[Seek military support from France and launch an invasion.|Henry Tudor #2a]]]
+(text-colour:#ffe066)[[[Wait for an opportunity to return peacefully and gather allies within England.|Henry Tudor #2b]]]
 
-[[Back to The War of the Roses-&gt;The War of the Roses]]]
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="16" name="Edward IV #1" tags="" position="4450,300" size="100,100">//London, 1461.//
+==&gt;&lt;==
 
-You have $points points.
+&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/King_Edward_IV.jpg/220px-King_Edward_IV.jpg&quot;&gt;
+&lt;==
 
-(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="19" name="StoryInIt" tags="" position="1100,100" size="100,100">(set: $points to 0)</tw-passagedata></tw-storydata>
+You are Edward IV, the newly crowned King of England and leader of the House of York. At only 18 years old, you have defeated the Lancastrian forces and claimed the throne. However, your reign is far from secure. The Lancastrian threat remains, and the nobility is divided. You must solidify your rule through diplomacy, warfare, and strategic alliances.
+
+(text-colour:#ffe066)[[[Strengthen your position through military campaigns to eliminate the Lancastrian threat.|Edward IV #2a]]]
+(text-colour:#ffe066)[[[Focus on securing alliances through marriage and diplomacy.|Edward IV #2b]]]
+(text-colour:#ffe066)[[[Consolidate power by rewarding loyal Yorkist nobles and punishing traitors.|Edward IV #2c]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="17" name="Richard III #1" tags="" position="3850,300" size="100,100">//England, 1483.//
+==&gt;&lt;==
+
+&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Richard_III_earliest_surviving_portrait.jpg/220px-Richard_III_earliest_surviving_portrait.jpg&quot;&gt;
+&lt;==
+
+The year is 1483, and tragedy strikes—your brother King Edward IV dies unexpectedly. His eldest son, Edward V, is just 12 years old, and a Regency Council must be formed to rule in his stead. You, as the Lord Protector, are tasked with guiding the young king. However, whispers of conspiracy and betrayal circulate around the court, especially concerning the Woodvilles, the family of the queen dowager, Elizabeth Woodville.
+
+(text-colour:#ffe066)[[[Remain loyal to Edward V and protect the young king.|Richard III #2a]]]
+(text-colour:#ffe066)[[[Seize power and claim the throne for yourself.|Richard III #2b]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="18" name="Common Soldier #4b" tags="" position="0,600" size="100,100">You stand your ground, but the knight&#39;s lance pierces through your armor.
+==&gt;&lt;==
+
+&lt;img
+src=&quot;https://media.istockphoto.com/id/1346709181/photo/after-epic-battle-bodies-of-dead-massacred-medieval-knights-lying-on-battlefield-warrior.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=BJbm3qE3jfDo3Qlufs0eXZiEmhPvB2taqDN1852vLSg=&quot;&gt;
+&lt;==
+
+&#39;&#39;You die on the battlefield, your body left among the fallen.&#39;&#39;
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="19" name="Common Soldier #4c" tags="" position="200,550" size="100,100">You rally the remaining soldiers and defend the camp. Though outnumbered, your strategic  mind helps you secure victory.
+
+&#39;&#39;You are recognized as a leader and promoted to sergeant.&#39;&#39;
+
+(text-colour:#ffe066)[[[Next: Towton (1461)]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="20" name="Common Soldier #4d" tags="" position="200,600" size="100,100">You flee into the forest, abandoning your post and comrades.
+==&gt;&lt;==
+
+&lt;img
+src=&quot;https://www.travelandleisure.com/thmb/7rvN0Ts9VS1ZkGOqgE-PRYNJ9iU=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-1280559528-ff3e6479c94e491a86148c2c4954b142.jpg&quot;&gt;
+&lt;==
+&#39;&#39;You survive, but your cowardice haunts you.&#39;&#39;
+
+//Your story ends in obscurity.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="21" name="Next: Towton (1461)" tags="" position="250,900" size="100,100">The Battle of Towton is the bloodiest conflict of the war. You stand on the battlefield, snow falling around you. 
+
+==&gt;&lt;==
+&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Richard_Caton_Woodville%27s_The_Battle_of_Towton.jpg/300px-Richard_Caton_Woodville%27s_The_Battle_of_Towton.jpg&quot;&gt;
+&lt;==
+
+The enemy approaches, and your commander gives the order to attack.
+
+(text-colour:#ffe066)[[[Lead a charge into the enemy ranks.|Common Soldier #5a]]]
+(text-colour:#ffe066)[[[Hold back and wait for reinforcements.|Common Soldier #5b]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="22" name="Common Soldier #5a" tags="" position="150,1000" size="100,100">You lead a charge into the enemy ranks, fighting with unmatched bravery. The battle is won, and your name is celebrated across England.
+
+&#39;&#39;You rise through the ranks and become a knight.&#39;&#39;
+
+(text-colour:#ffe066)[[[Next: Bosworth Field (1485)]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="23" name="Common Soldier #5b" tags="" position="350,1000" size="100,100">You wait for reinforcements, but they never arrive. The enemy overwhelms your forces.
+
+&#39;&#39;You are captured and executed as a traitor.&#39;&#39;
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="24" name="Next: Bosworth Field (1485)" tags="" position="250,1100" size="100,100">The war is coming to an end. You now serve either Henry Tudor or Richard III. The final battle at Bosworth Field will determine the fate of England.
+==&gt;&lt;==
+
+&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Battle_of_Bosworth_by_Philip_James_de_Loutherbourg.jpg/300px-Battle_of_Bosworth_by_Philip_James_de_Loutherbourg.jpg&quot;&gt;
+&lt;==
+
+(text-colour:#ffe066)[[[Fight for Henry Tudor.|Common Soldier #6a]]]
+(text-colour:#ffe066)[[[Remain loyal to Richard III|Common Soldier #6b]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="25" name="Common Soldier #6a" tags="" position="150,1200" size="100,100">You join Tudor&#39;s forces and fight valiantly. As Richard falls, victory is yours.
+
+&#39;&#39;You are knighted by Henry VII and serve the new Tudor dynasty.&#39;&#39;
+
+//You survive the War of the Roses.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="26" name="Common Soldier #6b" tags="" position="350,1200" size="100,100">You remain loyal to Richard III and fight to the bitter end. As Richard falls, you are surrounded by Tudor forces.
+
+&#39;&#39;You die defending your king.&#39;&#39;
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="27" name="Common Soldier #3e" tags="" position="400,500" size="100,100">You decide the risk is too great and turn back before reaching the enemy camp. You return safely to your tent, but the thought of what you might have discovered lingers in your mind. 
+
+The enemy lauches a surprise attack at dawn, catching your army off guard. You survive the battle, but your hesitation haunts you.
+
+(text-colour:#ffe066)[[[Next: Towton (1461)]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="28" name="Common Soldier #4e" tags="" position="500,550" size="100,100">You successfully infiltrate the enemy camp and locate a map outlining their battle strategy. Just as you&#39;re about to make your escape, a sentry spots you. 
+
+(text-colour:#ffe066)[[[Flee immediately and try to escape into the woods.|Common Soldier #5c]]]
+(text-colour:#ffe066)[[[Fight the sentry and attempt to silence him before reinforcements arrive|Common Soldier #5d]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="29" name="Common Soldier #4f" tags="" position="500,600" size="100,100">You retreat from the enmy camp and make it back safely to report what you&#39;ve overhear. Your commander is skeptical, but decides to prepare the troops for a potential ambush.
+
+Your vigilance saves your army from being caught off guard, and you are commended for your courage and initiative.
+
+(text-colour:#ffe066)[[[Next: Towton (1461)]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="30" name="Common Soldier #5c" tags="" position="500,650" size="100,100">You sprint into the darkness, heart racing as shouts echo behind you. You narrowly escape, but not without injury. Exhausted and wounded, you manage to return to camp with the stolen map. Your commander praises your bravery, but you&#39;ll bear the scar of that night for the rest of your life.
+
+The intelligence helps you side anticipate and counter the enemy&#39;s dawn attack leading to a decisive victory.
+
+(text-colour:#ffe066)[[[Next: Towton (1461)]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="31" name="Common Soldier #5d" tags="" position="500,700" size="100,100">You engage the sentry in a desperate fight. Though you manage to silence him, the commotion alerts nearby guards. Outnumbered and wounded, you are captured and taken prisoner.
+
+You are interrogated and imprisoned. Days later, your army loses the battle, and you are left to languish in the enemy&#39;s dungeons--or face execution.
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="32" name="Common Soldier #4g" tags="" position="300,550" size="100,100">You follow the scouts, careful to stay out of sight. They lead you to a hidden supply route that the enemy plans to use to reinforce their troops. 
+
+(text-colour:#ffe066)[[[Sabotage the supply route to hinder the enemy.|Common Soldier #5e]]]
+(text-colour:#ffe066)[[[Return to camp with the information|Common Soldier #5f]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="33" name="Common Soldier #4h" tags="" position="300,600" size="100,100">You return to camp and report the hidden supply route to your commander They send a larger force to intercept the enmy reinforcements, resulting in a decisive victory.
+
+You are recognized for your critical role insecuring the army&#39;s success.
+
+(text-colour:#ffe066)[[[Next: Towton (1461)]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="34" name="Common Soldier #5e" tags="" position="300,650" size="100,100">You set traps along the supply route, cutting off the enemy&#39;s reinforcements. Your actions significantly weaken their forces during the next battle, leading to a victoy for your side.
+
+Your actions turn the tide of the battle, and you are promoted for your resourcefulness and bravery.
+
+(text-colour:#ffe066)[[[Next: Towton (1461)]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="35" name="Common Soldier #5f" tags="" position="300,700" size="100,100">You return to camp and report the enemy’s numbers and movements. The information proves useful in planning the next day’s battle, but you wonder if you could have done more.
+
+The battle is fought evenly, with both sides suffering heavy losses. You survive but remain a nameless soldier in the annals of history.
+
+(text-colour:#ffe066)[[[Next: Towton (1461)]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="36" name="Elizabeth of York #2a" tags="" position="700,400" size="100,100">You begin to consider the possibility of marrying Richard III. While the idea troubles you, it could secure your family&#39;s safety and restore peace to England.
+
+Your mother, however, is vehemently opposed.
+
+(text-colour:#ffe066)[[[Defy your mother and agree to the marriage.|Elizabeth of York #3a]]]
+(text-colour:#ffe066)[[[Refuse and remain in sanctuary.|Elizabeth of York #3b]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="37" name="Elizabeth of York #2b" tags="" position="1000,400" size="100,100">You secretly align with Henry Tudor, who promises to marry you and unite the warring houses. Together, you plot the downfall of Richard III.
+
+In 1485, Henry lands in England with an army and prepares to face Richard at the Battle of Bosworth Field.
+
+(text-colour:#ffe066)[[[Encourage your supporters to join Henry&#39;s army.|Elizabeth of York #3c]]]
+(text-colour:#ffe066)[[[Stay in hiding and wait for the outcome.|Elizabeth of York #3d]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="38" name="Elizabeth of York #3a" tags="" position="600,500" size="100,100">You agree to marry Richard III, believing it is the best way to protect your family and the Yorkist legacy. However, before the wedding can take place, Richard is defeated and killed at the Battle of Bosworth Field.
+
+Henry Tudor ascends the throne as Henry VII and views you as a potential threat.
+
+You are imprisoned in the Tower of London and eventually executed as a traitor.
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="39" name="Elizabeth of York #3b" tags="" position="800,500" size="100,100">You refuse Richard&#39;s proposal and remain in sanctuary. Your mother sends secret messages to Henry Tudor, urging him to invade and claim the throne.
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="40" name="Elizabeth of York #3c" tags="" position="900,500" size="100,100">You rally Yorkist supporters to Henry&#39;s cause, promising them peace and stability. Henry triumphs at Bosworth, and you are crowned Queen of England.
+==&gt;&lt;==
+
+&lt;img
+src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Arms_of_Richard_of_York%2C_3rd_Duke_of_York.svg/140px-Arms_of_Richard_of_York%2C_3rd_Duke_of_York.svg.png&quot;&gt;
+&lt;==
+
+You unite the Houses of York and Lancaster, ending the Wars of the Roses.
+
+You survive and become the mother of a new dynasty.
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="41" name="Elizabeth of York #3d" tags="" position="1100,500" size="100,100">You remain in hiding, fearing betrayal. Though Henry wins at Bosworth, your lack of involvement causes suspicion at court.
+
+Henry marries you, but your position is precarious. You are viewed as a pawn rather than a queen.
+
+Your influence wanes, and you live a life of quiet obscurity.
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="42" name="Margaret Beaufort #2a" tags="" position="1300,400" size="100,100">You appeal to your husband, emphasizing the potential rewards of supporting your son. Stanley is cautious but intrigued.
+==&gt;&lt;==
+
+&lt;img
+src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Thomas-Stanley-1st-Earl-of-Derby.jpg/220px-Thomas-Stanley-1st-Earl-of-Derby.jpg&quot;&gt;
+&lt;==
+
+(text-colour:#ffe066)[[[Promise him titles and land if Henry becomes king.|Margaret Beaufort #3a]]]
+(text-colour:#ffe066)[[[Warn him of the dangers of remaining neutral.|Margaret Beaufort #3b]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="43" name="Margaret Beaufort #2b" tags="" position="1600,400" size="100,100">You travel across England in secret, forging alliances with disillusioned Yorkist nobles and Lancastrians who long for revenge.
+
+(text-colour:#ffe066)[[[Secure the support of Jasper Tudor, Henry&#39;s uncle.|Margaret Beaufort #3c]]]
+(text-colour:#ffe066)[[[Attempt to gain the backing orf foreign monarchs.|Margaret Beaufort #3d]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="44" name="Margaret Beaufort #3a" tags="" position="1200,500" size="100,100">Stanley agrees to support Henry, but only if victory seems assured. He sends secret messages pledging his troops, but remains noncommittal until the final moment. 
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="45" name="Margaret Beaufort #3b" tags="" position="1400,500" size="100,100">Stanley remains cautious and refuses to commit openly. You realize you must find other allies to secure Henry&#39;s throne.
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="46" name="Margaret Beaufort #3c" tags="" position="1500,500" size="100,100">Jasper Tudor agrees to return form exile and help lead Henry&#39;s forces. His experience and loyalty strengthen your cause.
+==&gt;&lt;==
+
+&lt;img
+src=&quot;https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7--s9IgixmcbA2QNA-P0qdvVLD3S4Ix6LihajF8V1ErzlqfqMz00Wm1kM8KYg6TRXkIUZ-8vuFHUTNf9cfXdQ7Q&quot;&gt;
+&lt;==
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="47" name="Margaret Beaufort #3d" tags="" position="1700,500" size="100,100">You send emissaries to the courts of France and Brittany, seeking their support. They provide funds and troops for Henry&#39;s invasion.
+==&gt;&lt;==
+
+&lt;img
+src=&quot;https://thewarsoftheroses.co.uk/wp-content/uploads/2022/07/4901294.jpg&quot;&gt;
+&lt;==
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="48" name="Elizabeth Woodville #2a" tags="" position="2200,400" size="100,100">You agree to marry Edward IV in secret, knowing that it could secure your sons&#39; future. 
+
+Soon after, Edward reveals the marriage publicly, shocking his advisors and the nobility. Your position as Queen is powerful, but fraught with tension.
+
+(text-colour:#ffe066)[[[Try to win over the Yorkist nobles.|Elizabeth Woodville #3a]]]
+(text-colour:#ffe066)[[[Strengthen your family&#39;s influenece by arranging advantageous marriages.|Elizabeth Woodville #3b]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="49" name="Elizabeth Woodville #2b" tags="" position="1900,400" size="100,100">You decline Edward&#39;s proposal, fearing the political backlash. Instead, you return to your family, seeking their protection.
+
+Edward marries a noblewoman of his advisors&#39; choosing, and the Yorkist court stabilizes. Your life is safer but much less influential.
+
+You live quietly, watching as the wars continue without your direct involvement.
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="50" name="Elizabeth Woodville #3a" tags="" position="2100,500" size="100,100">You make efforts to charm and placate key Yorkist nobles such as Richard Neville, the Earl of Warwick. However, Warwick remains distrustful and begins plotting against you and Edward.
+
+(text-colour:#ffe066)[[[Next: The Warwick Rebellion|The Warwick Rebellion #1a]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="51" name="Elizabeth Woodville #3b" tags="" position="2300,500" size="100,100">You focus on consolidating power through your family, the Woodvilles. Your siblings and children gain key positions in court, but this causes resentment among the nobility.
+
+(text-colour:#ffe066)[[[Next: The Rise of the Woodvilles|The Rise of the Woodvilles]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="52" name="The Warwick Rebellion #1a" tags="" position="2100,650" size="100,100">The Earl of Warwick, &quot;The Kingmaker,&quot; revolts against Edward IV, seeking to replace him with Henry VI.
+==&gt;&lt;==
+
+&lt;img
+src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Greville_arms.svg/180px-Greville_arms.svg.png&quot;&gt;
+&lt;==
+
+(text-colour:#ffe066)[[[Support Edward and prepare for exile if he loses.|The Warwick Rebellion #2a]]]
+(text-colour:#ffe066)[[[Secretly negotiate with Warwick for the safety of your children.|The Warwick Rebllion #2b]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="53" name="The Rise of the Woodvilles" tags="" position="2400,625" size="100,100">As Queen of England, you are now one of the most powerful women in the realm. However, with great power comes greater challenges. The rise of your family, the Woodvilles, brings both opportunity and danger. The nobility, especially powerful figures like Richard Neville, the Earl of Warwick, resent your family&#39;s influence and seek to diminish your power.
+
+(text-colour:#ffe066)[[[Focus on consolidating power by arranging strategic marriages for your siblings and children.|The Rise of the Woodvilles #2a]]]
+(text-colour:#ffe066)[[[Prioritize building alliances with powerful noble houses, including those who are wary of the Woodvilles.|The Rise of the Woodvilles #2b]]]
+(text-colour:#ffe066)[[[Concentrate on securing the loyalty of the court and influencing Edward IV&#39;s policies|The Rise of the Woodvilles #2c]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="54" name="The Warwick Rebellion #2a" tags="" position="2025,750" size="100,100">You remain loyal to Edward IV as he flees to Burgundy. In exile, you give birth to a son, the future Edward V.
+
+(text-colour:#ffe066)[[[Next: Edward&#39;s Return to Power|Edward&#39;s Return to Power]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="55" name="The Warwick Rebllion #2b" tags="" position="2175,750" size="100,100">You reach out to Warwick, seeking a compromise. He agrees to spare your children if Edward is defeated, but the terms are fragile.
+
+When Edward returns and defeats Warwick at the Battle of Barnet, your loyalty is questioned.
+
+You lose influence at court and must navigate a treacherous political landscape.
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="56" name="Edward&#39;s Return to Power" tags="" position="2025,800" size="100,100">Edward IV returns to England and defeats Warwick. You are reinstated as Queen, but the Wars of the Roses are far from over.
+
+Your children, especially your sons Edward V and Richard of Shrewsbury, are now targets.
+
+(text-colour:#ffe066)[[[Entrust your sons to the protection of their uncle, Richard of Gloucester.|Edward&#39;s Return to Power #2a]]]
+(text-colour:#ffe066)[[[Take your sons into sanctuary with you at Westminster Abbey.|Edward&#39;s Return to Power #2b]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="57" name="Edward&#39;s Return to Power #2a" tags="" position="1950,850" size="100,100">You trust Richard of Gloucester, believing he will protect your sons. However, they soon disappear, becoming the infamous Princes in the Tower.
+==&gt;&lt;==
+
+&lt;img
+src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/The_Princes_in_the_Tower_by_John_Everett_Millais_%281878%29.png/220px-The_Princes_in_the_Tower_by_John_Everett_Millais_%281878%29.png&quot;&gt;
+&lt;==
+
+You live out the rest of your life in grief, never knowing their fate.
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="58" name="Edward&#39;s Return to Power #2b" tags="" position="2050,850" size="100,100">You take your sons into sanctuary, hoping to protect them from political intrigue. However, Richard of GLoucester declares himself king as Richard III.
+
+(text-colour:#ffe066)[[[Next: Alliance with Henry Tudor|Alliance with Henry Tudor #1a]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="59" name="Alliance with Henry Tudor #1a" tags="" position="2050,900" size="100,100">With Richard III on the throne, you align with Margaret Beaufort, mother of Henry Tudor to overthrow him.
+
+(text-colour:#ffe066)[[[Arrange a marriage between your daughter, Elizabeth of York, and Henry Tudor.|Alliance with Henry Tudor #2a]]]
+(text-colour:#ffe066)[[[Gather Yorkist supporters to challenge Richard directly.|Alliance with Henry Tudor #2b]]]
+
+</tw-passagedata><tw-passagedata pid="60" name="Alliance with Henry Tudor #2a" tags="" position="2050,950" size="100,100">You broker a marriage between Elizabeth of York and Henry Tudor, uniting the warring houses. Henry defeats Richard at Bosworth Field, and your daughter becomes Queen of England.
+
+Your famiy&#39;s legacy is secured, and the Wars of the Roses end.
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="61" name="Alliance with Henry Tudor #2b" tags="" position="2150,950" size="100,100">You gather Yorkist loyalists and prepare for a rebellion against Richard III. However, your forces are defeated, and Richard consolidates his power.
+
+Your influence fades, and the Tudor Alliance is never formed.
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="62" name="The Rise of the Woodvilles #2a" tags="" position="2300,725" size="100,100">You arrange a series of advantageous marriages for your siblings and children, intertwining the Woodville family with the most powerful noble houses in England. However, this strategy provoeks resentment from long-standing noble families who view your familiy as social climbers.
+
+Your brothers, Anthony Woodville, marries into the noble Scales family, while your daughters arebetrothed to powerful heirs across the realm. These alliances strengthen the Woodvilles&#39; influence at court, but also paint a target on your back.
+==&gt;&lt;==
+
+&lt;img
+src=&quot;https://www.executedtoday.com/images/Anthony_Woodville.jpg&quot;&gt;
+&lt;==
+
+(text-colour:#ffe066)[[[Hold lavish court events to display the Woodvilles&#39; power and wealth.|The Rise of the Woodvilles #3a]]]
+(text-colour:#ffe066)[[[Attempt to quell dissent by offering key positions to noble families who feel sidelined.|The Rise of the Woodvilles #3b]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="63" name="The Rise of the Woodvilles #2b" tags="" position="2400,725" size="100,100">You seek to build alliances with powerful noble houses, recognizing that the Woodvilles alone cannot hold the court’s favor. You approach Margaret Beaufort, a key Lancastrian figure, and propose a secret pact to protect mutual interests.
+
+Margaret is cautious but recognizes the value of a partnership. Together, you work to secure the future of your respective children--Elizabeth of York and Henry Tudor.
+
+(text-colour:#ffe066)[[[Strengthen the alliance by secretly supporting Henry Tudor’s claim to the throne.|The Rise of the Woodvilles #3c]]]
+(text-colour:#ffe066)[[[Maintain a delicate balance by publicly supporting Edward IV while keeping ties with Margaret Beaufort.|The Rise of the Woodvilles #3d]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="64" name="The Rise of the Woodvilles #2c" tags="" position="2500,725" size="100,100">You focus on securing loyalty at court by influencing Edward IV’s policies and rewarding loyal courtiers. Your charm and intelligence win many allies, but envy and resentment simmer beneath the surface.
+
+(text-colour:#ffe066)[[[Use your influence to implement policies that benefit the common people, gaining popular support.|The Rise of the Woodvilles #3e]]]
+(text-colour:#ffe066)[[[Focus on strengthening the monarchy’s power, ensuring the Woodvilles&#39; position at court.|The Rise of the Woodvilles #3f]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="65" name="The Rise of the Woodvilles #3a" tags="" position="2300,825" size="100,100">Your extravagant displays of wealth and influence further alienate the older nobility. The Earl of Warwick, frustrated by his diminishing influence, begins conspiring with Edward IV’s brother, George, Duke of Clarence, to overthrow your family’s hold on the throne.
+
+(text-colour:#ffe066)[[[Confront Edward IV and urge him to act against Warwick and Clarence.|The Rise of the Woodvilles #4a]]]
+(text-colour:#ffe066)[[[Prepare for a potential rebellion by secretly gathering allies and resources.|The Rise of the Woodvilles #4b]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="66" name="The Rise of the Woodvilles #3b" tags="" position="2300,875" size="100,100">You offer key positions at court to the disgruntled nobility, temporarily appeasing them. However, Warwick’s ambitions cannot be easily satisfied, and he continues to plot against you in secret.
+
+The political landscape remains precarious, and you must constantly navigate treacherous waters to protect your family.
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="67" name="The Rise of the Woodvilles #4a" tags="" position="2300,925" size="100,100">You persuade Edward to act against Warwick and Clarence, but his initial reluctance gives the rebels time to mobilize. A civil war erupts, and while Edward ultimately prevails, the Woodvilles suffer significant losses.
+
+You survive the rebellion, but the Woodvilles&#39; influence is weakened, and you must work harder to maintain your position.
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="68" name="The Rise of the Woodvilles #4b" tags="" position="2300,975" size="100,100">Your foresight pays off. When Warwick and Clarence rebel, you are ready with loyal allies and resources. Edward IV quashes the rebellion swiftly, and your family emerges stronger than ever.
+
+The Woodvilles remain a dominant force in England, and your legacy as a political strategist grows.
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="69" name="The Rise of the Woodvilles #3c" tags="" position="2400,775" size="100,100">Your covert support for Henry Tudor puts you in a dangerous position. When Edward IV dies suddenly, the political landscape shifts dramatically. Richard III seizes the throne, and your sons, the Princes in the Tower, disappear.
+
+You are left to rely on Henry Tudor and Margaret Beaufort to reclaim your family&#39;s position.
+
+Henry Tudor defeats Richard III at the Battle of Bosworth, and your daughter Elizabeth of York marries him, uniting the Houses of York and Lancaster. Your political acumen secures the Tudor dynasty&#39;s rise, and you become the queen mother of England.
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="70" name="The Rise of the Woodvilles #3d" tags="" position="2400,825" size="100,100">You maintain public loyalty to Edward IV while secretly supporting Henry Tudor’s claim. When Edward dies and Richard III usurps the throne, you navigate the dangerous political landscape carefully.
+
+Your daughter Elizabeth of York becomes a symbol of unity, and you negotiate her marriage to Henry Tudor, ensuring the survival and success of both the Woodvilles and the Tudor line.
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="71" name="The Rise of the Woodvilles #3f" tags="" position="2500,825" size="100,100">By focusing on strengthening the monarchy, you solidify the Woodvilles’ position at court. However, this centralization of power alienates key nobles, leading to conspiracies and rebellion.
+
+The Woodvilles face numerous challenges but ultimately survive the turbulent Wars of the Roses, with your legacy as a formidable queen consort intact.
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="72" name="The Rise of the Woodvilles #3e" tags="" position="2500,775" size="100,100">Your policies improve the lives of the common people, earning you widespread popularity. However, this does little to appease the nobility, who grow more hostile.
+
+When Edward IV dies, the nobility rally around Richard III, forcing you into a precarious position.
+
+Despite the challenges, your popularity and strategic alliances pave the way for the Tudor dynasty, ensuring your family’s legacy.
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="73" name="Henry VI #2a" tags="" position="2600,400" size="100,100">You decide to assert your authority and lead your kingdom. Despite your fragile mental state, you issue decrees to maintain control and order your armies to prepare for battle against the Yorkists.
+
+(text-colour:#ffe066)[[[Lead your army personally at the Battle of St. Albans.|Henry VI #3a]]]
+(text-colour:#ffe066)[[[Stay in London and direct the campaign from a distance.|Henry VI #3b]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))
+
+</tw-passagedata><tw-passagedata pid="74" name="Henry VI #2b" tags="" position="2700,400" size="100,100">You allow Queen Margaret to lead the defense of the Lancaster cause. She gathers loyal nobles and raises an army to challenge the Yorkists.
+
+(text-colour:#ffe066)[[[Support Margaret’s campaign and focus on diplomacy with France.|Henry VI #3c]]]
+(text-colour:#ffe066)[[[Remain passive and retreat into religious contemplation.|Henry VI #3d]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="75" name="Henry VI #3a" tags="" position="2500,500" size="100,100">You ride to the battlefield to lead your forces. However, your inexperience in warfare and fragile state lead to a devastating defeat at St. Albans.
+
+You are captured by Yorkist forces, and your authority is severely weakened.
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="76" name="Henry VI #3b" tags="" position="2600,500" size="100,100">You remain in London, directing the campaign through your generals. However, without a decisive leader on the battlefield, your forces suffer a defeat at St. Albans.
+
+Your wife, Margaret, begins to take control of the war effort, further alienating your supporters.
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="77" name="Henry VI #3c" tags="" position="2700,500" size="100,100">You use your royal connections to secure French support for Margaret’s army. This alliance provides much-needed reinforcements, leading to a victory at Wakefield.
+
+However, Margaret’s brutal tactics alienate many nobles, leading to further conflict.
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="78" name="Henry VI #3d" tags="" position="2800,500" size="100,100">You retreat from politics and focus on religious devotion, leaving Margaret to lead alone.
+
+Without your visible presence, some nobles begin to question the legitimacy of your reign, and the Yorkists gain ground.
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="79" name="Henry Tudor #2a" tags="" position="3100,400" size="100,100">You travel to the French court, where King Louis XI sees an opportunity to weaken England by supporting your claim. He provides a small force to aid your invasion.
+==&gt;&lt;==
+
+&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Louis_XI_%281423-1483%29.jpg/220px-Louis_XI_%281423-1483%29.jpg&quot;&gt;
+&lt;==
+
+(text-colour:#ffe066)[[[Sail immediately for Wales and raise a rebellion.|Henry Tudor #3a]]]
+(text-colour:#ffe066)[[[Wait for more favorable conditions and gather intelligence on Yorkist movements.|Henry Tudor #3b]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="80" name="Henry Tudor #2b" tags="" position="3400,400" size="100,100">You choose patience, hoping to return under more peaceful circumstances. Margaret Beaufort, your mother, uses her influence to build a secret network of supporters within England.
+
+(text-colour:#ffe066)[[[Arrange a marriage alliance with Elizabeth of York to unite the houses of Lancaster and York.|Henry Tudor #3c]]]
+(text-colour:#ffe066)[[[Focus solely on military preparation and wait for Richard III to make a mistake.|Henry Tudor #3d]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="81" name="Henry Tudor #3a" tags="" position="3000,500" size="100,100">You land in Wales, your ancestral homeland. Many Welsh lords rally to your cause, remembering your Tudor lineage.
+==&gt;&lt;==
+
+&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Banner_of_Llywelyn_%28Square%29.svg/188px-Banner_of_Llywelyn_%28Square%29.svg.png&quot;&gt;
+&lt;==
+
+(text-colour:#ffe066)[[[Next: The March to England]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="82" name="Henry Tudor #3b" tags="" position="3200,500" size="100,100">You bide your time, learning about the divisions within the House of York. After Edward IV’s sudden death, Richard III seizes the throne, sparking discontent among the nobility.
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="83" name="Next: The March to England" tags="" position="3000,600" size="100,100">With a modest force of French and Welsh soldiers, you march towards England. Your goal is to challenge Richard III for the throne.
+=&gt;&lt;==
+
+&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/en/1/1f/Flag_of_medieval_France.png&quot;&gt;
+&lt;==
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="84" name="Henry Tudor #3c" tags="" position="3300,500" size="100,100">Your mother negotiates a potential marriage between you and Elizabeth of York, the daughter of Edward IV. This alliance could end the War of the Roses and unite England under a single crown.
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="85" name="Henry Tudor #3d" tags="" position="3500,500" size="100,100">You continue to build your forces in secret, waiting for the right moment to strike. News of Richard III’s controversial rise to power spreads, causing unrest.
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="86" name="Edward IV #2a" tags="" position="4450,400" size="100,100">You focus on diplomacy, seeking alliances through strategic marriages. Despite opposition from your advisors, you choose to marry Elizabeth Woodville, a commoner and widow of a Lancastrian supporter.
+
+(text-colour:#ffe066)[[[Defend your marriage and strengthen the Woodville family&#39;s position at court.|Edward IV #3c]]]
+(text-colour:#ffe066)[[[Distance yourself from the Woodvilles to appease the discontented nobility.|Edward IV #3d]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="87" name="Edward IV #2b" tags="" position="4650,400" size="100,100">You focus on rewarding loyal Yorkist nobles and punishing traitors. This consolidates your power but fosters resentment among those who feel overlooked.
+
+(text-colour:#ffe066)[[[Implement strict laws to maintain order and control dissent.|Edward IV #3e]]]
+(text-colour:#ffe066)[[[Attempt to reconcile with discontented nobles to maintain stability.|Edward IV #3f]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="88" name="Edward IV #2c" tags="" position="4250,400" size="100,100">You decide to lead a series of military campaigns to crush the remaining Lancastrian forces. Your victories on the battlefield solidify your claim to the throne but come at a cost.
+
+(text-colour:#ffe066)[[[Continue your campaigns to eliminate every possible threat.|Edward IV #3a]]]
+(text-colour:#ffe066)[[[Seek a truce with Margaret of Anjou and her supporters to avoid further bloodshed.|Edward IV #3b]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="89" name="Edward IV #3a" tags="" position="4200,500" size="100,100">You continue your campaigns until the Lancastrian forces are completely defeated. The victory is decisive, and you are hailed as a warrior king.
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="90" name="Edward IV #3b" tags="" position="4300,500" size="100,100">You negotiate a truce with Margaret of Anjou. The peace is fragile, but it allows you to focus on governing the kingdom.
+==&gt;&lt;==
+
+&lt;img
+src=&quot;https://dangerouswomenproject.org/wp-content/uploads/2016/06/Marguerite_dAnjou_1430-1482-350x500.jpg&quot;&gt;
+&lt;==
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="91" name="Edward IV #3c" tags="" position="4400,500" size="100,100">You stand by Elizabeth Woodville, elevating her family to positions of power. While this secures her loyalty, it creates tensions with powerful Yorkist nobles.
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="92" name="Edward IV #3d" tags="" position="4500,500" size="100,100">You distance yourself from the Woodvilles, which helps to ease tensions with the nobility but strains your marriage.
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="93" name="Edward IV #3e" tags="" position="4600,500" size="100,100">Your strict governance ensures order but creates fear and discontent among the populace.
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="94" name="Edward IV #3f" tags="" position="4700,500" size="100,100">You work to reconcile with discontented nobles, preventing potential uprisings and stabilizing your reign.
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="95" name="Richard III #2a" tags="" position="3700,400" size="100,100">You decide to honor your brother’s memory and protect his son, Edward V, from the political machinations of the Woodvilles and other noble families.
+==&gt;&lt;==
+
+&lt;img
+src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/King_Edward_V_from_NPG.jpg/220px-King_Edward_V_from_NPG.jpg&quot;&gt;
+&lt;==
+
+You escort Edward V and his younger brother, Richard, Duke of York, to the Tower of London for their protection while you stabilize the kingdom. However, tensions rise as the Woodvilles and their allies grow suspicious of your intentions.
+
+(text-colour:#ffe066)[[[Negotiate with the Woodvilles to form a unified regency.|Richard III #3a]]]
+(text-colour:#ffe066)[[[Eliminate the Woodville influence by imprisoning key members of their family.|Richard III #3b]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="96" name="Richard III #3a" tags="" position="3600,500" size="100,100">You attempt to negotiate a power-sharing agreement with the Woodvilles. However, they remain wary of your intentions, and political unrest continues to grow. Your authority is questioned, and factions within the court plot against you.
+
+(text-colour:#ffe066)[[[Continue diplomatic efforts to maintain peace.|Richard III #4a]]]
+(text-colour:#ffe066)[[[Crack down on dissent and assert your authority as Lord Protector.|Richard III #4b]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="97" name="Richard III #2b" tags="" position="4000,400" size="100,100">You decide that the best way to protect the realm—and the House of York—is to seize the throne for yourself.
+
+You declare that Edward IV’s marriage to Elizabeth Woodville was illegitimate, making his children bastards and ineligible for the throne. As the next legitimate heir, you crown yourself King Richard III.
+
+(text-colour:#ffe066)[[[Rule with fairness and justice to gain the trust of the people.|Richard III #3c]]]
+(text-colour:#ffe066)[[[Rule with an iron fist to crush any opposition.|Richard III #3d]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="98" name="Richard III #4a" tags="" position="3600,550" size="100,100">Your attempts at diplomacy falter as the Woodvilles manipulate Edward V against you. Eventually, a coup is staged, and you are arrested and executed for treason.
+
+You die loyal to the House of York, but your legacy is one of failure and missed opportunity.
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="99" name="Richard III #4b" tags="" position="3600,600" size="100,100">You imprison key members of the Woodville family, solidifying your control over the regency. However, unrest brews among the nobles, and rumors begin to spread about the young princes&#39; fate in the Tower.
+
+(text-colour:#ffe066)[[[Release the princes to ease public suspicion.|Richard III #5a]]]
+(text-colour:#ffe066)[[[Keep the princes in the Tower and secure your hold on power.|Richard III #5b]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="100" name="Richard III #5a" tags="" position="3600,650" size="100,100">You release Edward V and his brother from the Tower, but they are quickly placed under Woodville protection. A civil war erupts, and you are defeated in battle.
+
+You are executed, and the Woodvilles restore the young king to power.
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="101" name="Richard III #5b" tags="" position="3600,700" size="100,100">The princes remain in the Tower, but their mysterious disappearance soon follows. The nobility accuses you of their murder, and your reputation is forever tarnished.
+
+You lose the trust of the realm, and rebellion becomes inevitable.
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="102" name="Richard III #3c" tags="" position="3900,500" size="100,100">You begin your reign by promoting laws that benefit the common people and addressing grievances against corrupt nobles. Your policies gain you some support, but many still see you as a usurper.
+
+Despite your fair rule, Henry Tudor, a distant Lancastrian claimant to the throne, gathers an army in France and prepares to invade England.
+
+(text-colour:#ffe066)[[[Prepare for battle and face Henry Tudor head-on.|Richard III #4e]]]
+(text-colour:#ffe066)[[[Attempt to negotiate peace with Henry Tudor.|Richard III #4f]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="103" name="Richard III #3d" tags="" position="4100,500" size="100,100">You rule with absolute authority, eliminating anyone who dares oppose you. Your reign is marked by fear and suspicion, but it keeps rebellions at bay for a time.
+
+Despite your efforts to crush dissent, Henry Tudor raises an army to challenge your rule.
+
+(text-colour:#ffe066)[[[Fortify your defenses and wait for Henry Tudor to come to you.|Richard III #4g]]]
+(text-colour:#ffe066)[[[March out to meet Henry Tudor in battle.|Richard III #4h]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="104" name="Richard III #4f" tags="" position="3900,600" size="100,100">You send emissaries to negotiate with Henry Tudor, but he refuses to compromise. His invasion proceeds, and you are forced into battle at Bosworth Field.
+
+Despite your efforts, you are defeated and killed, and Henry Tudor takes the throne.
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="105" name="Richard III #4e" tags="" position="3900,550" size="100,100">You gather your forces and march to meet Henry Tudor at the Battle of Bosworth Field. The battle is fierce, but your allies begin to waver. Betrayed by key nobles, you are killed in battle.
+
+You die on the battlefield, and the Tudor dynasty begins.
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="106" name="Richard III #4g" tags="" position="4100,550" size="100,100">You retreat to your stronghold and prepare for a siege. However, your isolation leads to desertion among your allies, and Henry Tudor takes control of key territories. Eventually, your stronghold falls, and you are captured and executed.
+
+You die a defeated king, and the Tudor dynasty rises.
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="107" name="Richard III #4h" tags="" position="4100,600" size="100,100">You meet Henry Tudor at Bosworth Field, determined to crush the rebellion. However, betrayal from your allies leads to your downfall.
+
+You die in battle, and your reign ends in defeat.
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="108" name="Richard III #3b" tags="" position="3800,500" size="100,100">You decide that the Woodvilles are too dangerous to negotiate with. Their ambitions could destabilize the realm, so you take swift action. You arrest key members of the Woodville family, including the queen dowager, Elizabeth Woodville, and her son Thomas Grey, Marquess of Dorset.
+
+With the Woodville family imprisoned, you have eliminated one of the biggest threats to your regency. The nobility is wary but remains obedient for now. However, rumors begin to spread that the young princes, Edward V and his brother Richard, are in danger. The people grow uneasy.
+
+(text-colour:#ffe066)[[[Keep the princes in the Tower of London and focus on maintaining control.|Richard III #4c]]]
+(text-colour:#ffe066)[[[Arrange for the princes to be moved to a safer, more secret location.|Richard III #4d]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="109" name="Richard III #4d" tags="" position="3800,600" size="100,100">You decide to move the princes to a secret location outside of London, hoping to protect them from potential threats and rumors.
+
+You secretly send the princes to a remote castle in the countryside, guarded by loyal Yorkist knights. For a time, the plan works--the public believes they are still in the Tower, and your enemies are unaware of their true location.
+
+(text-colour:#ffe066)[[[Leave the princes in hiding and focus on ruling as Lord Protector.|Richard III #5e]]]
+(text-colour:#ffe066)[[[Use the princes as political pawns to strengthen your claim to power.|Richard III #5f]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="110" name="Richard III #4c" tags="" position="3800,550" size="100,100">You decide that the Tower of London is the most secure place for the young princes. Moving them might raise further suspicion or give the Woodvilles an opportunity to rescue them.
+
+One morning, the Tower guards report that the princes are missing. Rumors spread quickly--some say they were murdered on your orders, while others believe they were smuggled out of the Tower. Regardless, your enemies use this as a rallying cry to turn the nobility and the people against you.
+
+(text-colour:#ffe066)[[[Deny involvement in the disappearance and blame the Woodvilles.|Richard III #5c]]]
+(text-colour:#ffe066)[[[Refuse to comment and focus on consolidating your power further.|Richard III #5d]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="111" name="Richard III #5c" tags="" position="3800,650" size="100,100">You publicly declare that the Woodvilles are responsible for the disappearance of the princes. However, without evidence, your accusations are seen as a desperate attempt to shift blame. Nobles begin to defect to Henry Tudor, who positions himself as the legitimate heir to the throne.
+
+With support for Tudor growing, you must prepare for an inevitable confrontation. You gather your forces and prepare to face him on the battlefield.
+
+You are defeated at the Battle of Bosworth Field, betrayed by your own nobles. You die in battle, and the Tudor dynasty begins.
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="112" name="Richard III #5d" tags="" position="3800,700" size="100,100">You choose not to address the rumors, focusing instead on securing your position as Lord Protector. However, your silence only fuels the rumors. The disappearance of the princes becomes a symbol of your tyranny, and unrest spreads across the kingdom.
+
+Henry Tudor returns from exile in France with an army, and many nobles join his cause. The final confrontation takes place at the Battle of Bosworth Field.
+
+You are defeated and killed in battle. Your silence regarding the princes becomes part of the legend that defines your downfall.
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="113" name="Richard III #5e" tags="" position="3800,750" size="100,100">You decide it is safest for the princes to remain hidden while you maintain control over the kingdom. However, the secrecy surrounding their whereabouts continues to fuel rumors. Henry Tudor uses this uncertainty to rally support, claiming you have usurped the throne.
+
+Despite your efforts to maintain peace, Tudor&#39;s forces march on England. You meet him at the Battle of Bosworth Field.
+
+You are defeated and killed in battle. The princes&#39; fate remains a mystery, and you are remembered as a usurper.
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="114" name="Richard III #5f" tags="" position="3800,800" size="100,100">You reveal the princes&#39; location, using them as a symbol of Yorkist legitimacy. You parade them before the public to quell rumors and strengthen your claim as their protector.
+
+Initially, the public is relieved to see the princes alive, and your position as Lord Protector is temporarily stabilized. However, many nobles remain suspicious of your intentions, and Tudor continues to gather support abroad.
+
+(text-colour:#ffe066)[[[Arrange a marriage alliance to secure more support for the Yorkist cause.|Richard III #6a]]]
+(text-colour:#ffe066)[[[Prepare for war and eliminate any remaining dissenters.|Richard III #6b]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="115" name="Richard III #6a" tags="" position="3800,850" size="100,100">You negotiate a marriage alliance between one of your family members and a powerful noble house to secure more support. However, this delays your preparations for Tudor&#39;s invasion.
+
+Henry Tudor invades and defeats you at the Battle of Bosworth Field. Your careful political maneuvers are not enough to save your reign.
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="116" name="Richard III #6b" tags="" position="3800,900" size="100,100">You eliminate remaining dissenters and prepare for war. The final confrontation occurs at the Battle of Bosworth Field, where you face Henry Tudor.
+
+Despite your efforts, you are betrayed by key nobles and killed in battle. The Tudor dynasty begins, and your reign is remembered as a failure to secure the Yorkist legacy.
+
+//Your story ends here.//
+
+(text-colour:#ffe066)[[[Proceed to the End|End]]]
+
+(text-colour:#ffe066)[[[Restart: Back to Character Selection|Character Selection]]]
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="117" name="[Next: Towton (1461)" tags="" position="-125,675" size="100,100"></tw-passagedata><tw-passagedata pid="118" name="End" tags="" position="2300,0" size="100,100">Thank you so much for playing our Choose-Your-Own-Adventure Twine Narrative!!! We hope that you had fun and learned a little bit about the important people involved in the Wars of the Roses and the motivations in their lives that drove their decision-making
+
+To view our academic resources that informed our research and narration please see the (text-colour:#ffe066)[[[Bibliography]]] page.
+
+If you would like to continue playing and try out some of the other storylines available then return to the (text-colour:#ffe066)[[[Character Selection]]] page.
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata><tw-passagedata pid="119" name="Bibliography" tags="" position="2400,0" size="100,100">Goodwin, George. 2011. “This Bitter Field.” History Today 61 (5): 37–42. https://research-ebsco-com.mutex.gmu.edu/linkprocessor/plink?id=fc39b8bc-6786-3655-a91c-cb3d640b0608. 
+
+Griffiths, R. A. “Shakespeare, William (1564–1616), Playwright and Poet.” Oxford Dictionary of National Biography, September 23, 2004. https://www.oxforddnb.com/display/10.1093/ref:odnb/9780198614128.001.0001/odnb-9780198614128-e-25200.
+
+Horrox, Rosemary. “Richard III (1452–1485), King of England and Lord of Ireland.” Oxford Dictionary of National Biography, September 23, 2024. https://www.oxforddnb.com/view/10.1093/ref:odnb/9780198614128.001.0001/odnb-9780198614128-e-23500.
+
+Kuchma, Olha. 2023. “The Military Might of the Tudor Dynasty: An Overview.” Knightstemplar.co. September 6, 2023. https://knightstemplar.co/the-military-might-of-the-tudor-dynasty-an-overview/.
+
+“Lady Margaret Beaufort.” n.d. Historic UK. https://www.historic-uk.com/HistoryUK/HistoryofEngland/Lady-Margaret-Beaufort/.
+
+Mason, Emma. 2019. “Elizabeth of York: A Tudor of Rare Talent.” History Extra. History Extra. January 18, 2019. https://www.historyextra.com/period/tudor/elizabeth-of-york-a-tudor-of-rare-talent/.
+
+Oksana. 2023. “The Evolution of Tudor Weapons &amp; Armour: 1485-1603.” Knightstemplar.co. August 23, 2023. https://knightstemplar.co/the-evolution-of-tudor-weapons-armour-1485-1603/.
+
+Pollard, A. J. 2005. “Battle of St Albans, 1455.” History Today 55 (5): 23–29. https://research-ebsco-com.mutex.gmu.edu/linkprocessor/plink?id=6643e569-7957-3f56-823b-5f6fb41ac6e2.
+
+“The Battlefields Hub → Wars of the Roses.” n.d. Www.battlefieldstrust.com. https://www.battlefieldstrust.com/resource-centre/warsoftheroses/.
+
+“Tudor War.” n.d. English Heritage. https://www.english-heritage.org.uk/learn/story-of-england/tudors/war/.
+
+(enchant:?page,(text-colour:white)+(bg:(gradient: 0, 0,#ffffff,0,(hsl:206,1,0.9078,0.85),1,#000000,1,#ffffff,1,#888888)))</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
